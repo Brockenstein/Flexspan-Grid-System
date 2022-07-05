@@ -100,8 +100,28 @@
     align-items: center;
 }
 
+.fs-stretch {
+    align-items: stretch;
+}
+
 .fs-bottom {
     align-items: flex-end;
+}
+
+.fs-self-top {
+    align-self: flex-start;
+}
+
+.fs-self-middle {
+    align-self: center;
+}
+
+.fs-self-stretch {
+    align-self: stretch;
+}
+
+.fs-self-bottom {
+    align-self: flex-end;
 }
 
 .fs-around {
@@ -110,6 +130,22 @@
 
 .fs-between  {
     justify-content: space-between;
+}
+
+.fs-evenly {
+    justify-content: space-evenly;
+}
+
+.fs-center {
+    justify-content: center;
+}
+
+.fs-start {
+    justify-content: flex-start;
+}
+
+.fs-end {
+    justify-content: flex-end;
 }
 
 // Off Set styles
@@ -173,6 +209,26 @@
         .fs-#{$name}-bottom {
             align-items: flex-end;
         }
+
+        .fs-#{$name}-stretch {
+            align-items: stretch;
+        }
+        
+        .fs-#{$name}-self-top {
+            align-self: flex-start;
+        }
+        
+        .fs-#{$name}-self-middle {
+            align-self: center;
+        }
+        
+        .fs-#{$name}-self-stretch {
+            align-self: stretch;
+        }
+        
+        .fs-#{$name}-self-bottom {
+            align-self: flex-end;
+        }
         
         .fs-#{$name}-around {
             justify-content: space-around;
@@ -180,6 +236,22 @@
         
         .fs-#{$name}-between  {
             justify-content: space-between;
+        }
+
+        .fs-#{$name}-evenly {
+            justify-content: space-evenly;
+        }
+        
+        .fs-#{$name}-center {
+            justify-content: center;
+        }
+        
+        .fs-#{$name}-start {
+            justify-content: flex-start;
+        }
+        
+        .fs-#{$name}-end {
+            justify-content: flex-end;
         }
 
         // Off Set styles
@@ -207,5 +279,4 @@
     $x: $x + 1;
 
 }
-
 
