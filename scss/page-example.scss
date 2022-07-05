@@ -1,0 +1,41 @@
+// Should alredy be apart of TB
+@mixin breakpoint($break) {
+	@media screen and (min-width:$break) {
+		@content;
+	}
+}
+
+// Start Of what we would add to TB SASS
+
+// Default variables, easily overwritten
+$xxs: 360px !default;
+$xs: 480px !default;
+$s: 550px !default; 
+$sm: 600px !default;
+$m: 768px!default;
+$ml: 960px !default;
+$l: 1024px !default;
+$xl: 1200px !default;
+$xxl: 1400px !default; 
+
+
+// Breakpoints you plan on using for the grid system
+$breakpointsUsedForGrid:
+  "s" $s,
+  "m" $m,
+  "l" $l;
+
+// Comments out to test css variables instead
+// $gutter-gap: 15px !default;
+
+// CSS Variable
+// NOTE: You can not add SCSS variables to CSS variables, however you can use CSS variables in SCSS mixins
+:root {
+    --fs-spacing-col: 15px;
+    --fs-spacing-row: 15px;
+}
+
+
+
+// Importing the mixings for flexbox
+@import "_flexspan-grid-mixins", "_flexspan-grid-classes";

@@ -1,0 +1,211 @@
+// Classes needed to trigger flex
+.container-fluid, .container {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// .container-fluid {
+//     padding-right: var(--outer-margin, 2rem);
+//     padding-left: var(--outer-margin, 2rem);
+// }                             
+
+.fs-container {
+    // box-sizing: border-box;
+    // display: flex;
+    // flex: 0 1 auto;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // margin-right: var(--gutter-compensation, -0.5rem);
+    // margin-left: var(--gutter-compensation, -0.5rem);
+
+    @include flex(flex, row, wrap, space-between, start, start  );
+}
+
+.fs-container {
+    // box-sizing: border-box;
+    // display: flex;
+    // flex: 0 1 auto;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // margin-right: var(--gutter-compensation, -0.5rem);
+    // margin-left: var(--gutter-compensation, -0.5rem);
+
+    @include flex(flex, row, wrap, space-between, start, start  );
+}
+
+.fs-row {
+    // box-sizing: border-box;
+    // display: flex;
+    // flex: 0 1 auto;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // margin-right: var(--gutter-compensation, -0.5rem);
+    // margin-left: var(--gutter-compensation, -0.5rem);
+
+    @include flex(flex, row, nowrap, space-between, stretch, start );
+}
+
+// Distributed Grid
+// .fs-forced-container {
+//     display: grid;
+//     gap: var(--fs-spacing-row) var(--fs-spacing-col);
+// }
+
+.fs-row-gap {
+    margin-bottom: var(--fs-spacing-row);
+}
+
+// TODO: Make reverse be able to be used on breakpoiont
+
+// TODO: Look into incoprprating offsets
+
+// NOTE: Wait for your feedback if we need to do first- last-
+
+// Iterations through all the sizes for Flexbox styles
+
+.fs-auto {
+    @include flex-col(auto,12,null,null,1,1,null)
+}
+
+@for $i from 1 through 12 {  //12 Colmun Grid
+    //  @if $i == 12 {
+    //     .fs-#{$i} {
+    //         @include flex-col($i,12,null,null,1,0,null)
+    //     }
+    // }
+    // @else {
+        .fs-#{$i} {
+            @include flex-col($i,12,null,null,1,0,null)
+        }
+    // }
+}
+
+// Reverse Direction Classes
+
+.fs-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.fs-col-reverse {
+    flex-direction: column-reverse;
+}
+
+//  Alignment Classes
+
+.fs-top {
+    align-items: flex-start;
+}
+
+.fs-middle {
+    align-items: center;
+}
+
+.fs-bottom {
+    align-items: flex-end;
+}
+
+.fs-around {
+    justify-content: space-around;
+}
+
+.fs-between  {
+    justify-content: space-between;
+}
+
+// Off Set styles
+
+@for $i from 1 through 12 {  //12 Colmun Grid
+    .fs-offset-#{$i} {
+        @include flex-forced-offset($i,12,$i)
+    }
+}
+
+@for $i from 1 through 12 {  //12 Colmun Grid
+    .fs-col-count-#{$i} {
+        display: grid;
+        gap: var(--fs-spacing-row) var(--fs-spacing-col);
+
+        grid-template-columns: repeat(#{$i}, 1fr);
+    }
+}
+
+
+// Styles For each breakpoint
+
+  $x: 1;
+@each $name, $breakpointSize, $size in $breakpointsUsedForGrid {
+
+    @include breakpoint($breakpointSize) {
+
+        // 12 Colmun Grid
+        @for $i from 1 through 12 { 
+            .fs-#{$name}-#{$i} {
+                @include flex-col($i,12,null,null,1,1)
+            }
+        }
+
+        
+        .fs-#{$name}-auto {
+            @include flex-col(auto,12,null,null,1,1,null)
+        }
+
+
+        // Iterations through all the breakpoint sizes for reverse styles
+        .fs-#{$name}-row-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .fs-#{$name}-col-reverse {
+            flex-direction: column-reverse;
+        }
+
+       // Iterations through all the breakpoint sizes for Alignment Classes
+
+
+        .fs-#{$name}-top {
+            align-items: flex-start;
+        }
+        
+        .fs-#{$name}-middle {
+            align-items: center;
+        }
+        
+        .fs-#{$name}-bottom {
+            align-items: flex-end;
+        }
+        
+        .fs-#{$name}-around {
+            justify-content: space-around;
+        }
+        
+        .fs-#{$name}-between  {
+            justify-content: space-between;
+        }
+
+        // Off Set styles
+
+        @for $i from 1 through 12 {  //12 Colmun Grid
+            .fs-offset-#{$name}-#{$i} {
+                @include flex-forced-offset($i,12,$i)
+            }
+        }
+
+        // Grid Solution
+
+        @for $i from 1 through 12 {  //12 Colmun Grid
+            .fs-col-count-#{$name}-#{$i} {
+                grid-template-columns: repeat(#{$i}, 1fr);
+                &.fs-forced-container {
+                    display: grid;
+                    gap: var(--fs-spacing-row) var(--fs-spacing-col);
+                }
+            }
+        }
+
+
+    }
+    $x: $x + 1;
+
+}
+
+
