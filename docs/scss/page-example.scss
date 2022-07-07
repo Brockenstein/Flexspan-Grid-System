@@ -1,11 +1,11 @@
-// Should alredy be apart of TB
+// Breakpoint mixin
 @mixin breakpoint($break) {
 	@media screen and (min-width:$break) {
 		@content;
 	}
 }
 
-// Start Of what we would add to TB SASS
+// Start Of what we would add to your project
 
 // Default variables, easily overwritten
 $xxs: 360px !default;
@@ -38,4 +38,5 @@ $breakpointsUsedForGrid:
 
 
 // Importing the mixings for flexbox
-@import "_flexspan-grid-mixins", "_flexspan-grid-classes";
+// In this example I am backing out to the root of the github folder structure and grabbing the files from the dist folder
+@import "../../dist/_flexspan-grid-mixins", "../../dist/_flexspan-grid-classes";
