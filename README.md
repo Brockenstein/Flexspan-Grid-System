@@ -4,7 +4,7 @@ A different kind of Grid System that does not care about IE (Internet Explorer) 
 
 [Documentation](https://brockenstein.github.io/Flexspan-Grid-System/)
 
-Note: This is not just a pre-compiled CSS library that you add to your project but SASS/SCSS imports that you customize and compile as part of your project. So this will require a preprocessor. For those who are not command line inclined I personally love [Scout-App](https://scout-app.io/) which is a visual preprocessor.
+Note: This is not just a pre-compiled CSS library that you add to your project but SASS/SCSS partials that you import to your project and customize by modifying SASS variables and compile as part of your project. So this will require a preprocessor. For those who are not command line inclined I personally love [Scout-App](https://scout-app.io/) which is a visual preprocessor.
 
 
 <details><summary><b>Show instructions for setting up your project</b></summary>
