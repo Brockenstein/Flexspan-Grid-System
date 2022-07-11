@@ -14,6 +14,14 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 2. Add the following code to your main scss in your project. (Note: you may need to adjust the file path if you put the scss partials in a different directory than your main scss.)
 
     ```
+    
+        // Breakpoint mixin
+        @mixin breakpoint($break) {
+            @media screen and (min-width: $break) {
+                @content;
+            }
+        }
+    
        // Default variables, easily overwritten
         $xxs: 360px !default;
         $xs: 480px !default;
