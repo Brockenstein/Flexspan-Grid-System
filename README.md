@@ -58,18 +58,18 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 
 # Team
 ## Main Contributors
-* Brock Barnett - Ideator, Lead Developer and Lead Documentation Writer
-* Donte White - Developer, Tester and Documentation Writer
-* Malcom Harris - Developer and Tester
-* Drew Hill - Collaborator and Tester
-* Joe Sayegh - Tester
+* [Brock Barnett](https://github.com/Brockenstein) - Ideator, Lead Developer and Lead Documentation Writer
+* [Donte White](https://github.com/dwhite02) - Developer, Tester and Documentation Writer
+* [Malcom Harris](https://github.com/harrismalcolm) - Developer and Tester
+* [Drew Hill](https://github.com/drewhilltmp) - Collaborator and Tester
+* [Joe Sayegh](https://github.com/joesayegh) - Tester
 
 ## Special thanks to
-* Drew Toth
-* Paul Goepfert
-* Stephen Delancey
-* Laura Mahoney
-* Josh Mahoney
+* [Drew Toth](https://github.com/drew-git-tmp)
+* [Paul Goepfert](https://github.com/pgoepfert)
+* [Stephen Delancey](https://github.com/stephendelancey)
+* [Laura Mahoney](https://github.com/lmahoney1218)
+* [Josh Mahoney](https://github.com/jkmahoney)
 
 
 ## Inspiration
