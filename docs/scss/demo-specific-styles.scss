@@ -22,11 +22,17 @@ h1, h2, h3 {
 pre {
     background-color: #262626;
     color: #fff;
-    padding: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;
 }
 
 a {
     color: #262626;
+}
+
+.txt-comment {
+    color: orange;
 }
 
 .page-wrap {
@@ -38,12 +44,20 @@ a {
 
 .container-of-content {
     border: darkblue solid 2px;
+    padding: 20px;
 }
 
 .block-of-content {
     background-color: lavender;
     min-height: 100%;
     word-break: break-all;
+    padding: 10px;
+    box-sizing: border-box;
+
+    &--blue {
+        background: #036;
+        color: #fff;
+    }
 }
 .column-level1{
     background: rgb(69, 141, 212);
