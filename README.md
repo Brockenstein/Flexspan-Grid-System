@@ -53,3 +53,23 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
     3. Use the [Documentation](https://brockenstein.github.io/Flexspan-Grid-System/) to use the differnt classes in your HTML
 
 </details>
+
+
+
+# Team
+## Main Contributors
+* Brock Barnett - Ideator, Lead Developer and Lead Documentation Writer
+* Donte White - Developer, Tester and Documentation Writer
+* Malcom Harris - Developer and Tester
+* Andrew Hill - Collaborator and Tester
+* Joseph Sayegh - Tester
+
+## Special thanks to:
+* Paul Goepfert
+* Stephen Delancey
+* Laura Mahoney
+* Joshua Mahoney
+
+## Inspiration:
+* [Flexbox Grid](https://github.com/kristoferjoseph/flexboxgrid)
+* [Flexbox Grid Mixins](https://github.com/thingsym/flexbox-grid-mixins)
