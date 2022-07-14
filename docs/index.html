@@ -570,43 +570,141 @@
 
             <section>
                 <br><h2>"Fluid" Container vs Forced Container</h2>
-                <p>
-                    In some cases you may want to really leverage flexbox to literally flex in size to fill up row, or you may want columns to be differnt widths. Which people often call "fluid" when you want to use this then you use "fs-container" class and on each direct child you put a fs class. This method uses Flexbox css.
-                </p>
-                <span>.fs-container</span>
-                <div class="container-of-content">
-                    <div class="fs-container ">
-                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
-                        <div class="fs-m-12"><div class="block-of-content">.fs-m-12<br> Example Text</div></div>
-                        <div class="fs-m-7"><div class="block-of-content">.fs-m-7<br> Example Text</div></div>
-                        <div class="fs-m-2"><div class="block-of-content">.fs-m-2<br> Example Text</div></div>
+                
+                <!-- Fluid -->
+                <div>
+                    <p>
+                        In some cases you may want to really leverage flexbox to literally flex in size to fill up row, or you may want columns to be differnt widths. Which people often call "fluid" when you want to use this then you use "fs-container" class and on each direct child you put a fs class. This method uses Flexbox css.
+                    </p>
+                    <span>.fs-container</span>
+                    <div class="container-of-content">
+                        <div class="fs-container ">
+                            <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                            <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
+                            <div class="fs-m-12"><div class="block-of-content">.fs-m-12<br> Example Text</div></div>
+                            <div class="fs-m-7"><div class="block-of-content">.fs-m-7<br> Example Text</div></div>
+                            <div class="fs-m-2"><div class="block-of-content">.fs-m-2<br> Example Text</div></div>
+                        </div>
                     </div>
                 </div>
-               
-                <p>
-                    In other cases, you may want to predetermine how many columns there are, and if you are okay with the columns always being equal widths. We call this Forced and you use the "fs-forced-container" class and then instead of adding a class to each direct child, on that container you indicate the ammount of columns you want to force. This method uses Grid css.
-                </p>
+                
+                <!-- Forced -->
+               <div>
+                    <p>
+                        In other cases, you may want to predetermine how many columns there are, and if you are okay with the columns always being equal widths. We call this Forced and you use the "fs-forced-container" class and then instead of adding a class to each direct child, on that container you indicate the ammount of columns you want to force. This method uses Grid css.
+                    </p>
 
-                <span>.fs-forced-container .fs-col-count-2</span>
-                <div class="fs-forced-container fs-col-count-2 container-of-content">
-                    <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                    <div class=""><div class="block-of-content">Example Text</div></div>
-                    <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                    <div class=""><div class="block-of-content">Example Text</div></div>
-                    <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                </div>
+                    <span>.fs-forced-container .fs-col-count-2</span>
+                    <div class="fs-forced-container fs-col-count-2 container-of-content">
+                        <div class="">
+                            <div class="block-of-content">
+                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="block-of-content">Example Text</div>
+                        </div>
+                        <div class="">
+                            <div class="block-of-content">
+                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                            </div>
+                        </div>
+                        <div class="">
+                            <div class="block-of-content">Example Text</div>
+                        </div>
+                        <div class="">
+                            <div class="block-of-content">
+                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                            </div>
+                        </div>
+                    </div>
 
-                <span>.fs-forced-container .fs-col-count-3</span>
-                <div class="fs-forced-container fs-col-count-3 container-of-content">
-                    <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                    <div class=""><div class="block-of-content">Example Text</div></div>
-                    <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                    <div class=""><div class="block-of-content">Example Text</div></div>
-                    <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                </div>
-            </section>
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-2 container-of-content"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
             
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 4  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 5  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        </code></pre>
+
+                    <span>.fs-forced-container .fs-col-count-3</span>
+                    <div class="fs-forced-container fs-col-count-3 container-of-content">
+                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                        <div class=""><div class="block-of-content">Example Text</div></div>
+                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                        <div class=""><div class="block-of-content">Example Text</div></div>
+                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                    </div>
+               </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-3 container-of-content"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 4  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 5  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        </code></pre>
+                
+            </section>
+
             <!-- Create Mixins -->
             <section>
                 <br><h2>How to create your own classes uses the mixins</h2>
