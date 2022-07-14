@@ -64,7 +64,7 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 * Andrew Hill - Collaborator and Tester
 * Joseph Sayegh - Tester
 
-## Special thanks to:
+## Special thanks to
 * Drew Toth
 * Paul Goepfert
 * Stephen Delancey
@@ -72,6 +72,6 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 * Joshua Mahoney
 
 
-## Inspiration:
+## Inspiration
 * [Flexbox Grid](https://github.com/kristoferjoseph/flexboxgrid)
 * [Flexbox Grid Mixins](https://github.com/thingsym/flexbox-grid-mixins)
