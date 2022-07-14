@@ -65,10 +65,12 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 * Joseph Sayegh - Tester
 
 ## Special thanks to:
+* Drew Toth
 * Paul Goepfert
 * Stephen Delancey
 * Laura Mahoney
 * Joshua Mahoney
+
 
 ## Inspiration:
 * [Flexbox Grid](https://github.com/kristoferjoseph/flexboxgrid)
