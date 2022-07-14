@@ -61,15 +61,15 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 * Brock Barnett - Ideator, Lead Developer and Lead Documentation Writer
 * Donte White - Developer, Tester and Documentation Writer
 * Malcom Harris - Developer and Tester
-* Andrew Hill - Collaborator and Tester
-* Joseph Sayegh - Tester
+* Drew Hill - Collaborator and Tester
+* Joe Sayegh - Tester
 
 ## Special thanks to
 * Drew Toth
 * Paul Goepfert
 * Stephen Delancey
 * Laura Mahoney
-* Joshua Mahoney
+* Josh Mahoney
 
 
 ## Inspiration
