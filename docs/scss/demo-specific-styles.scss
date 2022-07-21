@@ -5,6 +5,59 @@
 /* $font-family-secondary: 'Muli', sans-serif; */
 @import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+// Variables
+
+    $primary: #264653;
+    $primary-dark: darken($primary, 10%);
+    $primary-alt: #2a9d8f;
+    $primary-alt-light: lighten($primary-alt, 50%);
+    $secondary: #e76f51;
+    $secondary-alt: #f4a261;
+    $fs-yellow: #e9c46a;
+
+    // Breakpoint mixin
+    @mixin breakpoint($break) {
+        @media screen and (min-width:$break) {
+            @content;
+        }
+    }
+
+   // Default variables, easily overwritten
+    $xxs: 360px !default;
+    $xs: 480px !default;
+    $s: 550px !default; 
+    $sm: 600px !default;
+    $m: 768px!default;
+    $ml: 960px !default;
+    $l: 1024px !default;
+    $xl: 1200px !default;
+    $xxl: 1400px !default; 
+
+// Colors
+
+.txt {
+
+    &--blue {
+        color: $primary;
+    }
+
+    &--ocean-blue {
+        color: $primary-alt;
+    }
+
+    &--red {
+        color: $secondary;
+    }
+
+    &--orange {
+        color: $secondary-alt;
+    }
+
+}
+
+
+
 html {
     overflow-x: hidden;
     background-color: #262626;
@@ -12,74 +65,111 @@ html {
     background-repeat: no-repeat;
     background-image: liner-gradient(50% 50% at top center,rgba(0,0,0,.66),#262626);
     font-family: 'Noto Sans', sans-serif;
+    scroll-behavior: smooth;
 
 }
 
 h1, h2, h3 {
     font-family:'Muli', sans-serif;  
+    line-height: 1;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    padding-bottom: 5px;
+    margin-top: 0;
 }
 
 pre {
-    background-color: #262626;
+    background: $primary-dark;
     color: #fff;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 0 0 10px 10px;
     overflow: auto;
+    margin: 0;
+
+    #instructions & {
+        border-radius: 10px;
+    }
 }
 
 a {
     color: #262626;
+
+    &:hover {
+        color: $primary-alt;
+    }
+}
+
+.banner {
+    background: linear-gradient(90deg, $primary, $primary-alt);
+    color: #fff;
+    padding:0px 20px;
 }
 
 .txt-comment {
-    color: orange;
+    color: $fs-yellow;
+
+    &--blue {
+        color: $primary-alt;
+    }
 }
 
 .page-wrap {
     background: #fff;
     max-width: 1200px;
     margin: auto;
-    padding: 20px;
+
+    > .fs-container {
+        gap: 0;
+    }
 }
 
 .container-of-content {
-    border: darkblue solid 2px;
+    border: $primary-dark solid 2px;
     padding: 20px;
 }
 
 .block-of-content {
-    background-color: lavender;
+    background-color: $primary-alt-light;
     min-height: 100%;
     word-break: break-all;
     padding: 10px;
     box-sizing: border-box;
 
     &--blue {
-        background: #036;
+        background: $primary;
         color: #fff;
+    }
+
+    img {
+        width: 100%;
     }
 }
 .column-level1{
-    background: rgb(69, 141, 212);
-    border-color:#007FFF;
+    background: $primary-alt-light;
     min-height: 15px; 
-    /* padding:10px; */
+    padding:20px;
+    overflow: auto;
 }
 .column-level2{
-    background:#06C;
-    border-color:#007FFF;
+    background: $secondary-alt;
     min-height: 15px; 
-    /* padding:10px */
+    padding:20px;
+    overflow: auto;
 }
 .column-level3{
-    background:#036;
-    border-color:#007FFF; 
+    background: $secondary;
     min-height: 15px; 
-    /* padding:10px */
+    padding:20px;
+    overflow: auto;
 }
 
 .container-level1 {
-    border: darkblue solid 2px;
+    border: $primary solid 2px;
 } 
 
 .container-level2 {
@@ -96,4 +186,81 @@ a {
 .custom-gap {
     --fs-spacing-col: 50px;
     --fs-spacing-row: 15px;
+}
+
+.sidebar {
+    display: block !important;
+    padding: 40px;
+    overflow-y: auto;
+
+    @include breakpoint($l) {
+        position: sticky;
+        top: 0;
+        height: calc(100vh - 2rem);
+        border-right: solid rgba($primary, .125) 1px;
+    }
+    
+}
+
+.content-wrap {
+    overflow: auto;
+    padding: 0 20px 50px;
+}
+
+.page-section {
+    position: relative;
+    width: calc(100% - 40px);
+    margin: auto;
+
+    &:not(:last-of-type) {
+        padding-bottom: 75px;
+        border-bottom: 2px dotted $primary-alt;
+    }
+
+    &:not(:first-of-type) {
+        padding-top: 75px;
+    }
+}
+
+.select-links {
+
+    list-style: none;
+    padding: 0;
+
+    li {
+        border-left: 1px solid rgba($primary-alt, .2);
+        transition: all .25s;
+
+        &:hover {
+            border-left: 1px solid $primary;
+            padding-left: 10px;
+        }
+    }
+
+    a {
+        padding: 10px 10px 10px 20px;
+        display: block;
+        text-decoration: none;
+    }
+}
+
+.info-box {
+    background-color: rgba( $fs-yellow , .25);
+    padding: 20px 40px;
+    border-left: 5px solid $fs-yellow;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
+}
+
+.txt-bold {
+    font-weight: bold;
+}
+
+.m-top {
+    margin-top: 1.5em;
+}
+
+#github {
+    padding: 20px 20px 40px;
 }
