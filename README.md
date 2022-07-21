@@ -54,7 +54,19 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 
 </details>
 
-
+# Table of Contents
+* [Intro](https://brockenstein.github.io/Flexspan-Grid-System/#intro)
+* [How To Use](https://brockenstein.github.io/Flexspan-Grid-System/#instuctions)
+* [12 Grid System](https://brockenstein.github.io/Flexspan-Grid-System/#grid-system)
+* [Breakpoints](https://brockenstein.github.io/Flexspan-Grid-System/#breakpoint)
+* [Nested Grids](https://brockenstein.github.io/Flexspan-Grid-System/#nested-gril)
+* [Fluid](https://brockenstein.github.io/Flexspan-Grid-System/#fluid)
+* [Forced Row](https://brockenstein.github.io/Flexspan-Grid-System/#forced-row)
+* [Responsive Columns](https://brockenstein.github.io/Flexspan-Grid-System/#responsive-column)
+* [Control the Gap](https://brockenstein.github.io/Flexspan-Grid-System/#gap)
+* [Reverse Classes](https://brockenstein.github.io/Flexspan-Grid-System/#reverse)
+* [Grid Alignment](https://brockenstein.github.io/Flexspan-Grid-System/#alignment)
+* [Fluid vs Forced Container](https://brockenstein.github.io/Flexspan-Grid-System/#fluid-forced)
 
 # Team
 ## Main Contributors
