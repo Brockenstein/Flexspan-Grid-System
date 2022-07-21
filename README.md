@@ -6,9 +6,10 @@ A different kind of Grid System that does not care about IE (Internet Explorer) 
 
 Note: This is not just a pre-compiled CSS library that you add to your project but SASS/SCSS partials that you import to your project and customize by modifying SASS variables and compile as part of your project. So this will require a preprocessor. For those who are not command line inclined I personally love [Scout-App](https://scout-app.io/) which is a visual preprocessor or if you like VS Code you could use [Live Sass Compiler](https://marketplace.visualstudio.com/items?itemName=glenn2223.live-sass).
 
-<details><summary><b>Show instructions for setting up your project</b></summary>
+## Usage
+<b>How to set up Flexspan for your project</b>
 
-1. Make sure to download the latest release and place those scss partials on the same server as your project's main scss so that it can compile.
+1. Download the latest release and place the scss partials on the same server as your project's main scss so that it can compile.
 
 2. Add the following code to your main scss in your project. (Note: you may need to adjust the file path if you put the scss partials in a different directory than your main scss.)
 
@@ -52,7 +53,9 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 
     3. Use the [Documentation](https://brockenstein.github.io/Flexspan-Grid-System/) to use the differnt classes in your HTML
 
-</details>
+
+
+
 
 # Table of Contents
 * [Intro](https://brockenstein.github.io/Flexspan-Grid-System/#intro)
