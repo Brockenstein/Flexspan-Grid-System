@@ -13,10 +13,8 @@
         <link rel="stylesheet" href="css/page-example.css">
         <link rel="stylesheet" href="css/demo-specific-styles.css">
 
-        <style>
-
-
-        </style>
+        <!-- Tailwind CSS -->
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 
     </head>
     <body>
@@ -26,30 +24,91 @@
 
         <div class="page-wrap">
 
-            <!-- Flex Grid Intro -->
-            <section class="page-section">
-                <h1>The Flexspan Grid System</h1>
+            <header class="banner">
+                <div class="fs-container">
+                    <div class="fs-middle">
+                        <h1>The Flexspan Grid System</h1>
+                    </div>
+                </div>
+            </header>
 
-                <a href="https://github.com/Brockenstein/Flexspan-Grid-System">Repo</a>
-                
-                <h2>What is different about this grid system from the others out there?</h2>
-                
-                <ul>
-                    <li><b>No IE support.</b> The <a href="https://death-to-ie11.com/">death to internet explorer countdown</a> has started. Which is good because having to build in IE fallbacks or just simply supporting it out of the box has been holding grids back.</li>
-                    <li><b>Pre-defining rows is optional.</b> Most grid systems force you to create a row and even calls the sections inside of it a column. Whereas this grid system allows you to truly use flex and have rows naturally form as the content needs to but for when you need, forcing rows is still available.</li>
-                    <li><b>A true gap system.</b> In most grid systems margins are used to fake a gap system. In this grid system the gap CSS property is used, meaning it only creates a space between two elements in the grid and does not add a space when it is against the edge of the grid. Additionally, gaps are able to be controlled at a global level </li>
-                    <li><b>Breakpoints</b> Most grid systems use a max-width breakpoint system which does not align with most standards, it forces you to add more classes than you would need to and it doesn't allow you to have a section not flexed until a certain size. With this grid system you not only have min-width but also you have control over the breakpoint values to match your site. Like most grid systems by Default though you have 3 breakpoints, "s" for small, "m" for medium and "l" for large but in this one you can add more, for example if you needed an extra large you could add "xl" to your $breakpointsUsedForGrid list and now be able to use "fs-xl-6" to do a 50% at that breakpoint.</li>
-                </ul>
-            </section>
+            <div class="fs-container kid">
 
-            <!-- How to Use -->
-            <section class="page-section">
-                <h2>How to put in on the site</h2>
-                <p>
-                    Sites are often complex and end up having multiple styles sheets. However remember you only want 1 set of classes to appear accross your own site. So with that in mind we have two files you can pull in. First the mixins. You can repeate mixins on all your scss files and it won't duplicate anythig. However with your scss file is creating classes it will duplicate those classes. So you only need to use the classes scss partial once.  
-                </p>
+                <!-- Table Contents -->
+                <aside class="sidebar fs-l-3">
+                        
+                    <h2>Table of Contents</h2>
 
-                <p>So if you are making a brand style sheet you would add the following to your site. </p>
+                    <ul class="select-links">
+                        <li>
+                            <a href="#intro">Intro</a>
+                        </li>
+                        <li>
+                            <a href="#instructions">How To Use</a>
+                        </li>
+                        <li>
+                            <a href="#grid-system">12 Grid System</a>
+                        </li>
+                        <li>
+                            <a href="#breakpoint">Breakpoints</a>
+                        </li>
+                        <li>
+                            <a href="#nested-grid">Nested Grids</a>
+                        </li>
+                        <li>
+                            <a href="#fluid">Fluid</a>
+                        </li>
+                        <li>
+                            <a href="#forced-row">Forced Row</a>
+                        </li>
+                        <li>
+                            <a href="#responsive-column">Responsive Columns</a>
+                        </li>
+                        <li>
+                            <a href="#gap">Control the Gap</a>
+                        </li>
+                        <li>
+                            <a href="#reverse">Reverse Classes</a>
+                        </li>
+                        <li>
+                            <a href="#alignment">Grid Alignment</a>
+                        </li>
+                        <li>
+                            <a href="#fluid-forced">Fluid vs Forced Container</a>
+                        </li>
+                    </ul>
+                </aside>
+
+                <!-- Page Content -->
+                <main class="content-wrap fs-l-9">
+                    
+                    <div id="github">
+                        <div class="info-box">
+                            Want to view github content? <a href="https://github.com/Brockenstein/Flexspan-Grid-System">Click here to see Repo</a>
+                        </div>
+                    </div>
+
+                    <!-- Flex Grid Intro -->
+                    <section id="intro" class="page-section">
+                        
+                        <h2>What is different about this grid system from the others out there?</h2>
+                        
+                        <ul>
+                            <li><b>No IE support.</b> The <a href="https://death-to-ie11.com/">death to internet explorer countdown</a> has started. Which is good because having to build in IE fallbacks or just simply supporting it out of the box has been holding grids back.</li>
+                            <li><b>Pre-defining rows is optional.</b> Most grid systems force you to create a row and even calls the sections inside of it a column. Whereas this grid system allows you to truly use flex and have rows naturally form as the content needs to but for when you need, forcing rows is still available.</li>
+                            <li><b>A true gap system.</b> In most grid systems margins are used to fake a gap system. In this grid system the gap CSS property is used, meaning it only creates a space between two elements in the grid and does not add a space when it is against the edge of the grid. Additionally, gaps are able to be controlled at a global level </li>
+                            <li><b>Breakpoints</b> Most grid systems use a max-width breakpoint system which does not align with most standards, it forces you to add more classes than you would need to and it doesn't allow you to have a section not flexed until a certain size. With this grid system you not only have min-width but also you have control over the breakpoint values to match your site. Like most grid systems by Default though you have 3 breakpoints, "s" for small, "m" for medium and "l" for large but in this one you can add more, for example if you needed an extra large you could add "xl" to your $breakpointsUsedForGrid list and now be able to use "fs-xl-6" to do a 50% at that breakpoint.</li>
+                        </ul>
+                    </section>
+
+                    <!-- How to Use -->
+                    <section id="instructions" class="page-section">
+                        <h2>How to put in on the site</h2>
+                        <p>
+                            Sites are often complex and end up having multiple styles sheets. However remember you only want 1 set of classes to appear accross your own site. So with that in mind we have two files you can pull in. First the mixins. You can repeate mixins on all your scss files and it won't duplicate anythig. However with your scss file is creating classes it will duplicate those classes. So you only need to use the classes scss partial once.  
+                        </p>
+
+                        <p>So if you are making a brand style sheet you would add the following to your site. </p>
 
         <!-- CODE EXAMPLE  -->
         <pre><code>
@@ -81,347 +140,690 @@
         // Importing the mixings for flexbox
         @import "_flexspan-grid-mixins", "_flexspan-grid-classes";
         </code></pre>
-            </section>
+                    </section>
 
-            <!-- 12 Grid System -->
-            <section class="page-section">
-                <h2>Fluid Width 12 Grid System</h2>
-                    <p>
-                        These classes are based on a 12 column grid system. So instead of trying to determine what percentage width your element needs to be you can use these classes you just need to know how many columns your element will span across. A helpful hint is when creating the page layout items from a designed in Zeplin you can turn on the grid and see how many columns your layout spans. 
-                    </p>
-                    <p> 
-                        Using these classes produces a percent based flex-basis allowing for fluid resizing of elements to fall into their own rows with an equal yet controllable gapping between elements. Think of classes you use as creating the the percentage by taking the number you use in the class and dividing it by 12 and then moving the decimal point over two places. For example .fs-12 would span 100% of the parent container and .fs-6 would span 50% and .fs-4 would be 33.33%.
-                    </p>
+                    <!-- 12 Grid System -->
+                    <section id="grid-system" class="page-section">
+                        <h2>Fluid Width 12 Grid System</h2>
 
-                    <p>Keep in mind, if the cotents of the flexspan does not allow the width of the element to shrink to its needed width, then it will grow.</p>
-
-                    <div>.fs-container</div>
-                    <div class="fs-container container-of-content">
-                        <div class="fs-12"><div class="block-of-content">.fs-12</div></div>
-                        <div class="fs-1"><div class="block-of-content">.fs-1</div></div>
-                        <div class="fs-11"><div class="block-of-content">.fs-11</div></div>
-                        <div class="fs-2"><div class="block-of-content">.fs-2</div></div>
-                        <div class="fs-10"><div class="block-of-content">.fs-10</div></div>
-                        <div class="fs-3"><div class="block-of-content">.fs-3</div></div>
-                        <div class="fs-9"><div class="block-of-content">.fs-9</div></div>
-                        <div class="fs-4"><div class="block-of-content">.fs-4</div></div>
-                        <div class="fs-8"><div class="block-of-content">.fs-8</div></div>
-                        <div class="fs-5"><div class="block-of-content">.fs-5</div></div>
-                        <div class="fs-7"><div class="block-of-content">.fs-7</div></div>
-                        <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
-                        <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
-                        <div class="fs-1"><div class="block-of-content">.fs-1</div></div>
-                        <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
-                        <div class="fs-5"><div class="block-of-content">.fs-5</div></div>
-                    </div>
+                            <div>
+                                <p>
+                                    These classes are based on a 12 column grid system. So instead of trying to determine what percentage width your element needs to be you can use these classes you just need to know how many columns your element will span across. A helpful hint is when creating the page layout items from a designed in Zeplin you can turn on the grid and see how many columns your layout spans. 
+                                </p>
+                                <p> 
+                                    Using these classes produces a percent based flex-basis allowing for fluid resizing of elements to fall into their own rows with an equal yet controllable gapping between elements. Think of classes you use as creating the the percentage by taking the number you use in the class and dividing it by 12 and then moving the decimal point over two places. For example .fs-12 would span 100% of the parent container and .fs-6 would span 50% and .fs-4 would be 33.33%.
+                                </p>
             
-                    <p>To create a "50/50" section all you have to do is create an element with a class of fs-container and then add two elements inside of it with a class of fs-6. In some other grid systems you have to create rows but in this grid system you do not have to, two flex-span-6 elements will fit on one row naturally.</p>
+                                <p>Keep in mind, if the cotents of the flexspan does not allow the width of the element to shrink to its needed width, then it will grow.</p>
+                            </div>
 
-                    <div>.fs-container</div>
-                    <div class="fs-container container-of-content">
-                        <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
-                        <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
-                    </div>
+                            <div>.fs-container</div>
+                            <div class="container-of-content">
+                                <div class="fs-container">
+                                    <div class="fs-12">
+                                        <div class="block-of-content">.fs-12</div>
+                                    </div>
+                                    <div class="fs-1">
+                                        <div class="block-of-content">.fs-1</div>
+                                    </div>
+                                    <div class="fs-11">
+                                        <div class="block-of-content">.fs-11</div>
+                                    </div>
+                                    <div class="fs-2">
+                                        <div class="block-of-content">.fs-2</div>
+                                    </div>
+                                    <div class="fs-10">
+                                        <div class="block-of-content">.fs-10</div>
+                                    </div>
+                                    <div class="fs-3">
+                                        <div class="block-of-content">.fs-3</div>
+                                    </div>
+                                    <div class="fs-9">
+                                        <div class="block-of-content">.fs-9</div>
+                                    </div>
+                                    <div class="fs-4">
+                                        <div class="block-of-content">.fs-4</div>
+                                    </div>
+                                    <div class="fs-8">
+                                        <div class="block-of-content">.fs-8</div>
+                                    </div>
+                                    <div class="fs-5">
+                                        <div class="block-of-content">.fs-5</div>
+                                    </div>
+                                    <div class="fs-7">
+                                        <div class="block-of-content">.fs-7</div>
+                                    </div>
+                                    <div class="fs-6">
+                                        <div class="block-of-content">.fs-6</div>
+                                    </div>
+                                    <div class="fs-6">
+                                        <div class="block-of-content">.fs-6</div>
+                                    </div>
+                                    <div class="fs-1">
+                                        <div class="block-of-content">.fs-1</div>
+                                    </div>
+                                    <div class="fs-6">
+                                        <div class="block-of-content">.fs-6</div>
+                                    </div>
+                                    <div class="fs-5">
+                                        <div class="block-of-content">.fs-5</div>
+                                    </div>
+                                </div>  
+                            </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-container">
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-12"&gt;
+                &lt;div class="block-of-content"&gt;.fs-12&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;.fs-1&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-11"&gt;
+                &lt;div class="block-of-content"&gt;.fs-11&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 4  --&gt;</span>
+            &lt;div class="fs-2"&gt;
+                &lt;div class="block-of-content"&gt;.fs-2&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 5  --&gt;</span>
+            &lt;div class="fs-10"&gt;
+                &lt;div class="block-of-content"&gt;.fs-10&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 6  --&gt;</span>
+            &lt;div class="fs-3"&gt;
+                &lt;div class="block-of-content"&gt;.fs-3&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 7  --&gt;</span>
+            &lt;div class="fs-9"&gt;
+                &lt;div class="block-of-content"&gt;.fs-9&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 8  --&gt;</span>
+            &lt;div class="fs-4"&gt;
+                &lt;div class="block-of-content"&gt;.fs-4&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 9  --&gt;</span>
+            &lt;div class="fs-8"&gt;
+                &lt;div class="block-of-content"&gt;.fs-8&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 10  --&gt;</span>
+            &lt;div class="fs-5"&gt;
+                &lt;div class="block-of-content"&gt;.fs-5&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 11  --&gt;</span>
+            &lt;div class="fs-7"&gt;
+                &lt;div class="block-of-content"&gt;.fs-7&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 12  --&gt;</span>
+            &lt;div class="fs-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-6&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 13  --&gt;</span>
+            &lt;div class="fs-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-6&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 14  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;.fs-1&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 15  --&gt;</span>
+            &lt;div class="fs-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-6&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 16  --&gt;</span>
+            &lt;div class="fs-5"&gt;
+                &lt;div class="block-of-content"&gt;.fs-5&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+                    
+                            <p>
+                                To create a "50/50" section all you have to do is create an element with a class of fs-container and then add two elements inside of it with a class of fs-6. In some other grid systems you have to create rows but in this grid system you do not have to, two flex-span-6 elements will fit on one row naturally.
+                            </p>
+
+                            <div>.fs-container</div>
+                            <div class="container-of-content">
+                                <div class="fs-container">
+                                    <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
+                                    <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
+                                </div>
+                            </div>
 
         <!-- CODE EXAMPLE  -->                   
         <pre><code>
         &lt;div class="fs-container"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
             &lt;div class="fs-6"&gt;&lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
             &lt;div class="fs-6"&gt;&lt;/div&gt;
+
         &lt;/div&gt;
         </code></pre>
 
-            </section>
+                    </section>
 
-            <!-- Nested Grids -->
-            <section class="page-section nested">
-                <h2>Nested Grids</h2>
-                <p>Nesting grids inside grids inside grids is a prime example of how to do complex layouts. Though, keep in mind when you are developing sites you should keep your layout classes separate from your element styles. In this example below you will see any styling goes on separate classes from the grid system classes. </p>
-                
-                <div class="fs-container container-level1">
+                    <!-- Breakpoints -->
+                    <section id="breakpoint" class="page-section">
+                        <h2>Breakpoints</h2>
 
-                    <!-- Level 1  -->
-                    <div class="fs-7 column-level1">
-                        .fs-7
+                        <p>
+                            When working with grid sysyem, all classes come equipped with multiple breakpoint values (exception being "<span class="txt-bold">.fs-container</span>", "<span class="txt-bold">.fs-row</span>", and "<span class="txt-bold">.fs-forced-container</span>"). Breakpoints are based off <span class="txt-bold">$breakpointsUsedForGrid</span> list within your SASS.
+                        </p>
 
-                        <div class="fs-container container-level2">
+                        <div class="info-box">
+                            Ex. 
+                            <ul>
+                                <li>
+                                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-6
+                                </li>
+                                <li>
+                                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-middle
+                                </li>
+                                <li>
+                                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-self-bottom
+                                </li>
+                                <li>
+                                    fs-col-count-{<span class="txt-bold txt--blue">breakpoint</span>}-6
+                                </li>
+                            </ul>
+                        </div>
 
-                            <!-- Level 2   -->
-                            <div class="fs-9 column-level2">
-                                .fs-9
-
-                                <div class="fs-container container-level3">
-                                    <!-- Level 3   -->
-                                    <div class="fs-4 column-level3">
-                                        .fs-4
-                                    </div>
-                                    <!-- Level 3   -->
-                                    <div class="fs-8 column-level3">
-                                        .fs-8
-                                    </div>
+                        <div class="container-of-content">
+                            <div class="fs-container">
+                                <div class="fs-6 fs-m-4">
+                                    <div class="block-of-content">fs-6 fs-m-4</div>
+                                </div>
+                                <div class="fs-6 fs-m-4">
+                                    <div class="block-of-content">fs-6 fs-m-4</div>
+                                </div>
+                                <div class="fs-12 fs-m-4">
+                                    <div class="block-of-content">fs-12 fs-m-4</div>
                                 </div>
                             </div>
 
-                            <!-- Level 2   -->
-                            <div class="fs-3 column-level2">
-                                .fs-3
-                                
-                                <!-- Level 3   -->
-                                <div class="fs-container container-level3">
-                                    <div class="fs-auto column-level3">
-                                        .fs-auto
-                                    </div>
+                            <br>
+
+                            <div class="fs-container">
+                                <div class="fs-12 fs-m-2 fs-l-3">
+                                    <div class="block-of-content">fs-12 fs-m-2 fs-l-3</div>
                                 </div>
-                            </div>         
-                        </div>
-                    </div>
-
-                    <!-- Level 1   -->
-                    <div class="fs-5 column-level1">
-                        .fs-5
-
-                        <div class="fs-container container-level2">
-
-                            <!-- Level 2   -->
-                            <div class="fs-12 column-level2">
-                                .fs-12
-
-                                <div class="fs-container container-level3">
-
-                                    <!-- Level 3  -->
-                                    <div class="fs-6 column-level3">
-                                        .fs-6
-                                    </div>
-
-                                    <!-- Level 3  -->
-                                    <div class="fs-6 column-level3">
-                                        .fs-6
-                                    </div>
+                                <div class="fs-8 fs-m-7 fs-l-3">
+                                    <div class="block-of-content">fs-8 fs-m-7 fs-l-3</div>
+                                </div>
+                                <div class="fs-4 fs-m-5 fs-l-6">
+                                    <div class="block-of-content">fs-4 fs-m-5 fs-l-6</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-          
-        <!-- CODE EXAMPLE  -->
-        <pre><code>
-        <span class="txt-comment">&lt;!-- Level 1  --&gt;</span>
-        &lt;div class="fs-7 column-level1"&gt;
-            .fs-7
-
-            &lt;div class="fs-container container-level2"&gt;
-
-                <span class="txt-comment">&lt;!-- Level 2  --&gt;</span>
-                &lt;div class="fs-9 column-level2"&gt;
-                    .fs-9
-
-                    &lt;div class="fs-container container-level3"&gt;
-                        <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
-                        &lt;div class="fs-4 column-level3"&gt;
-                            .fs-4
-                        &lt;/div&gt;
-                        <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
-                        &lt;div class="fs-8 column-level3"&gt;
-                            .fs-8
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-
-                <span class="txt-comment">&lt;!-- Level 2  --&gt;</span>
-                &lt;div class="fs-3 column-level2"&gt;
-                    .fs-3
-                    
-                    <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
-                    &lt;div class="fs-container container-level3"&gt;
-                        &lt;div class="fs-auto column-level3"&gt;
-                            .fs-auto
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;         
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        <span class="txt-comment">&lt;!-- Level 1  --&gt;</span>
-        &lt;div class="fs-5 column-level1"&gt;
-            .fs-5
-
-            &lt;div class="fs-container container-level2"&gt;
-
-                <span class="txt-comment">&lt;!-- Level 2  --&gt;</span>
-                &lt;div class="fs-12 column-level2"&gt;
-                    .fs-12
-
-                    &lt;div class="fs-container container-level3"&gt;
-
-                        <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
-                        &lt;div class="fs-6 column-level3"&gt;
-                            .fs-6
-                        &lt;/div&gt;
-
-                        <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
-                        &lt;div class="fs-6 column-level3"&gt;
-                            .fs-6
-                        &lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        </code></pre>
-            </section>
-
-            <!-- Flex Fluid -->
-            <section>
-                <br>
-                <h2>Fluid</h2>
-                <p>Percent based widths allow fluid resizing of columns and rows, taking up the remaining space within the flex container.</p>
-                
-                <div class="container-of-content">
-                    <div class="fs-container">
-                        <div class="fs-1">
-                            <div class="block-of-content">fs-1</div>
-                        </div>
-                        <div class="fs-1">
-                            <div class="block-of-content">fs-1</div>
-                        </div>
-                        <div class="fs-1">
-                            <div class="block-of-content">fs-1</div>
-                        </div>
-            <!--<div class="fs-2"><div class="block-of-content"></div></div><div class="fs-3"><div class="block-of-content"></div></div><div class="fs-9"><div class="block-of-content"></div></div><div class="fs-4"><div class="block-of-content"></div></div><div class="fs-8"><div class="block-of-content"></div></div><div class="fs-5"><div class="block-of-content"></div></div><div class="fs-7"><div class="block-of-content"></div></div><div class="fs-6"><div class="block-of-content"></div></div><div class="fs-6"><div class="block-of-content"></div></div> -->
-                    </div>
-
-                    <br>
-
-                    <div class="fs-container">
-                        <div class="fs-1">
-                            <div class="block-of-content">fs-1</div>
-                        </div>
-                        <div class="fs-5">
-                            <div class="block-of-content">fs-5</div>
-                        </div>
-                        <div class="fs-2">
-                            <div class="block-of-content">fs-2</div>
-                        </div>
-                    </div>
-                </div>
-                
-            </section>
-            
-            <!-- Forced Rows -->
-            <section>
-                <br>
-                <h2>Forced Rows</h2>
-
-                <p> When using "flex-row", columns are forced into one singular line rather than breaking into multiple lines once width of columns exceeds container.</p>
-
-                <div class="container-of-content">
-                    <div class="fs-row fs-row-gap">
-                        <div class="fs-4">
-                            <div class="block-of-content"> fs-row fs-row-gap</div>
-                        </div>
-                        <div class="fs-auto">
-                            <div class="block-of-content"></div>
-                        </div>
-                        <div class="fs-1">
-                            <div class="block-of-content"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <p>When removing the class "fs-row-gap", there is no margin below "fs-row" containers</p>
-
-                <div class="container-of-content">
-                    <div class="fs-row">
-                        <div class="fs-4">
-                            <div class="block-of-content block-of-content--blue">Just fs-row</div>
-                        </div>
-                        <div class="fs-auto">
-                            <div class="block-of-content block-of-content--blue"></div>
-                        </div>
-                        <div class="fs-1">
-                            <div class="block-of-content block-of-content--blue"></div>
-                        </div>
-                    </div>
-    
-                    <div class="fs-row fs-row-gap">
-                        <div class="fs-4">
-                            <div class="block-of-content">fs-row fs-row-gap</div>
-                        </div>
-                        <div class="fs-auto">
-                            <div class="block-of-content"></div>
-                        </div>
-                        <div class="fs-1">
-                            <div class="block-of-content"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-            </section>
-
-            <!-- Responsive Columns -->
-            <section>
-                <br>
-                <h2>Responsive Columns</h2>
-                <p>Responsively change the amount the element spans depending on the breakpoint.</p>
-                
-                <div class="fs-container">
-                    <div class="fs-12 fs-l-1">
-                        <div class="block-of-content">1</div>
-                    </div>
-                    <div class="fs-12 fs-s-6 fs-l-10">
-                        <div class="block-of-content">2</div>
-                    </div>
-                    <div class="fs-12 fs-s-6 fs-l-1">
-                        <div class="block-of-content">3</div>
-                    </div>
-                </div>
 
         <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container"&gt;
-            &lt;div class="fs-12 fs-l-1"&gt;
-                &lt;div class="block-of-content"&gt;1&lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-6 fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;fs-6 fs-m-4&lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class="fs-12 fs-s-6 fs-l-10"&gt;
-                &lt;div class="block-of-content"&gt;2&lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-6 fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;fs-6 fs-m-4&lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class="fs-12 fs-s-6 fs-l-1"&gt;
-                &lt;div class="block-of-content"&gt;3&lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-12 fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;fs-12 fs-m-4&lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+
+        &lt;div class="fs-container"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-12 fs-m-2 fs-l-3"&gt;
+                &lt;div class="block-of-content"&gt;fs-12 fs-m-2 fs-l-3&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-8 fs-m-7 fs-l-3"&gt;
+                &lt;div class="block-of-content"&gt;fs-8 fs-m-7 fs-l-3&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-4 fs-m-5 fs-l-6"&gt;
+                &lt;div class="block-of-content"&gt;fs-4 fs-m-5 fs-l-6&lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                    </section>
+
+                    <!-- Nested Grids -->
+                    <section id="nested-grid" class="page-section ">
+                        <h2>Nested Grids</h2>
+                        <p>Nesting grids inside grids inside grids is a prime example of how to do complex layouts. Though, keep in mind when you are developing sites you should keep your layout classes separate from your element styles. In this example below you will see any styling goes on separate classes from the grid system classes. </p>
+                        
+                        <div class="container-of-content">
+                            <div class="fs-container container-level1">
+
+                                <!-- Level 1  -->
+                                <div class="fs-m-7 column-level1">
+                                    Level 1: .fs-m-7
+    
+                                    <div class="fs-container container-level2">
+    
+                                        <!-- Level 2   -->
+                                        <div class="fs-m-9 column-level2">
+                                            Level 2: .fs-m-9
+    
+                                            <div class="fs-container container-level3">
+                                                <!-- Level 3   -->
+                                                <div class="fs-m-4 column-level3">
+                                                    Level 3: .fs-m-4
+                                                </div>
+                                                <!-- Level 3   -->
+                                                <div class="fs-m-8 column-level3">
+                                                    Level 3: .fs-m-8
+                                                </div>
+                                            </div>
+                                        </div>
+    
+                                        <!-- Level 2   -->
+                                        <div class="fs-m-3 column-level2">
+                                            Level 2: .fs-m-3
+                                            
+                                            <!-- Level 3   -->
+                                            <div class="fs-container container-level3">
+                                                <div class="fs-auto column-level3">
+                                                    Level 3: .fs-m-auto
+                                                </div>
+                                            </div>
+                                        </div>         
+                                    </div>
+                                </div>
+    
+                                <!-- Level 1   -->
+                                <div class="fs-m-5 column-level1">
+                                    Level 1: .fs-m-5
+    
+                                    <div class="fs-container container-level2">
+    
+                                        <!-- Level 2   -->
+                                        <div class="fs-m-12 column-level2">
+                                            Level 2: .fs-m-12
+    
+                                            <div class="fs-container container-level3">
+    
+                                                <!-- Level 3  -->
+                                                <div class="fs-m-6 column-level3">
+                                                    Level 3: .fs-m-6
+                                                </div>
+    
+                                                <!-- Level 3  -->
+                                                <div class="fs-m-6 column-level3">
+                                                    Level 3: .fs-m-6
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                               
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-container"&gt;
+            <span class="txt-comment">&lt;!-- Level 1  --&gt;</span>
+            &lt;div class="fs-m-7 column-level1"&gt;
+                Level 1: .fs-m-7
+
+                &lt;div class="fs-container container-level2"&gt;
+
+                    <span class="txt-comment">&lt;!-- Level 2  --&gt;</span>
+                    &lt;div class="fs-m-9 column-level2"&gt;
+                        Level 2: .fs-m-9
+
+                        &lt;div class="fs-container container-level3"&gt;
+                            <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
+                            &lt;div class="fs-m-4 column-level3"&gt;
+                                Level 3: .fs-m-4
+                            &lt;/div&gt;
+                            <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
+                            &lt;div class="fs-m-8 column-level3"&gt;
+                                Level 3: .fs-m-8
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+
+                    <span class="txt-comment">&lt;!-- Level 2  --&gt;</span>
+                    &lt;div class="fs-m-3 column-level2"&gt;
+                        Level 2: .fs-m-3
+                        
+                        <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
+                        &lt;div class="fs-container container-level3"&gt;
+                            &lt;div class="fs-m-auto column-level3"&gt;
+                                Level 3: .fs-m-auto
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;         
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Level 1  --&gt;</span>
+            &lt;div class="fs-m-5 column-level1"&gt;
+                Level 1: .fs-m-5
+
+                &lt;div class="fs-container container-level2"&gt;
+
+                    <span class="txt-comment">&lt;!-- Level 2  --&gt;</span>
+                    &lt;div class="fs-m-12 column-level2"&gt;
+                        Level 2: .fs-m-12
+
+                        &lt;div class="fs-container container-level3"&gt;
+
+                            <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
+                            &lt;div class="fs-m-6 column-level3"&gt;
+                                Level 3: .fs-m-6
+                            &lt;/div&gt;
+
+                            <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
+                            &lt;div class="fs-m-6 column-level3"&gt;
+                                Level 3: .fs-m-6
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        </code></pre>
+                    </section>
+
+                    <!-- Flex Fluid -->
+                    <section id="fluid" class="page-section">
+                        <h2>Fluid</h2>
+                        <p>Percent based widths allow fluid resizing of columns and rows, taking up the remaining space within the flex container.</p>
+                        
+                        <div class="container-of-content">
+                            <div class="fs-container">
+                                <div class="fs-1">
+                                    <div class="block-of-content">fs-1</div>
+                                </div>
+                                <div class="fs-1">
+                                    <div class="block-of-content">fs-1</div>
+                                </div>
+                                <div class="fs-1">
+                                    <div class="block-of-content">fs-1</div>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="fs-container">
+                                <div class="fs-1">
+                                    <div class="block-of-content">fs-1</div>
+                                </div>
+                                <div class="fs-5">
+                                    <div class="block-of-content">fs-5</div>
+                                </div>
+                                <div class="fs-2">
+                                    <div class="block-of-content">fs-2</div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-container"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+
+        &lt;div class="fs-container"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-5"&gt;
+                &lt;div class="block-of-content"&gt;fs-5&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-2"&gt;
+                &lt;div class="block-of-content"&gt;fs-2&lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+                        
+                    </section>
+                    
+                    <!-- Forced Rows -->
+                    <section id="forced-row" class="page-section">
+                        <h2>Forced Rows</h2>
+
+                        <p> When using "flex-row", columns are forced into one singular line rather than breaking into multiple lines once width of columns exceeds container.</p>
+
+                        <div class="container-of-content">
+                            <div class="fs-row fs-row-gap">
+                                <div class="fs-4">
+                                    <div class="block-of-content"> fs-row fs-row-gap</div>
+                                </div>
+                                <div class="fs-auto">
+                                    <div class="block-of-content"></div>
+                                </div>
+                                <div class="fs-1">
+                                    <div class="block-of-content"></div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-row fs-row-gap"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-4"&gt;
+                &lt;div class="block-of-content"&gt;fs-row fs-row-gap&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-auto"&gt;
+                &lt;div class="block-of-content"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;&lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
         </code></pre>
 
-            </section>
+                        <p>When removing the class "fs-row-gap", there is no margin below "fs-row" containers</p>
 
-            <!-- Gap Sizing -->
-            <section>
-                <br>
-                <h2>Control the Gap</h2>
+                        <div class="container-of-content">
+                            <div class="fs-row">
+                                <div class="fs-4">
+                                    <div class="block-of-content block-of-content--blue">Just fs-row</div>
+                                </div>
+                                <div class="fs-auto">
+                                    <div class="block-of-content block-of-content--blue"></div>
+                                </div>
+                                <div class="fs-1">
+                                    <div class="block-of-content block-of-content--blue"></div>
+                                </div>
+                            </div>
+            
+                            <div class="fs-row fs-row-gap">
+                                <div class="fs-4">
+                                    <div class="block-of-content">fs-row fs-row-gap</div>
+                                </div>
+                                <div class="fs-auto">
+                                    <div class="block-of-content"></div>
+                                </div>
+                                <div class="fs-1">
+                                    <div class="block-of-content"></div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        <span class="txt-comment">&lt;!-- Fs-row with no gap --&gt;</span>
+        &lt;div class="fs-row "&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-4"&gt;
+                &lt;div class="block-of-content"&gt;Just fs-row&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-auto"&gt;
+                &lt;div class="block-of-content"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
         
-                <p>Gutters are the negative space, or gaps, between columns and rows. You can control the gutters for the entire grid at once or just for a particular container by using the CSS variables `--fs-gutter-col` and `--fs-spacing-row` which is already setup at the root level.</p>
+        <span class="txt-comment">&lt;!-- Fs-row with gap --&gt;</span>
+        &lt;div class="fs-row fs-row-gap"&gt;
 
-                <p>When you need to control the gap of a particular container you can make a class that has that same CSS Variable name with the new size as seen below.</p>
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-4"&gt;
+                &lt;div class="block-of-content"&gt;fs-row fs-row-gap&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-auto"&gt;
+                &lt;div class="block-of-content"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+
+                        <br>
+                    </section>
+
+                    <!-- Responsive Columns -->
+                    <section id="responsive-column" class="page-section">
+                        <h2>Responsive Columns</h2>
+                        <p>Responsively change the amount the element spans depending on the breakpoint.</p>
+
+                        <div class="container-of-content">
+                            <div class="fs-container">
+                                <div class="fs-12 fs-l-1">
+                                    <div class="block-of-content">1</div>
+                                </div>
+                                <div class="fs-12 fs-s-6 fs-l-10">
+                                    <div class="block-of-content">2</div>
+                                </div>
+                                <div class="fs-12 fs-s-6 fs-l-1">
+                                    <div class="block-of-content">3</div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-container"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-12 fs-l-1"&gt;
+                &lt;div class="block-of-content"&gt;1&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-12 fs-s-6 fs-l-10"&gt;
+                &lt;div class="block-of-content"&gt;2&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-12 fs-s-6 fs-l-1"&gt;
+                &lt;div class="block-of-content"&gt;3&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+
+                    </section>
+
+                    <!-- Gap Sizing -->
+                    <section id="gap" class="page-section">
+                        <h2>Control the Gap</h2>
+                
+                        <p>Gutters are the negative space, or gaps, between columns and rows. You can control the gutters for the entire grid at once or just for a particular container by using the CSS variables `--fs-gutter-col` and `--fs-spacing-row` which is already setup at the root level.</p>
+
+                        <p>When you need to control the gap of a particular container you can make a class that has that same CSS Variable name with the new size as seen below.</p>
 
 
-                <div>.fs-container .custom-gap</div>
-                <div class="fs-container custom-gap container-of-content">
-                    <div class="fs-12"><div class="block-of-content">.fs-12</div></div>
-                    <div class="fs-1"><div class="block-of-content">.fs-1</div></div>
-                    <div class="fs-11"><div class="block-of-content">.fs-11</div></div>
-                    <div class="fs-2"><div class="block-of-content">.fs-2</div></div>
-                    <div class="fs-10"><div class="block-of-content">.fs-10</div></div>
-                    <div class="fs-3"><div class="block-of-content">.fs-3</div></div>
-                    <div class="fs-9"><div class="block-of-content">.fs-9</div></div>
-                    <div class="fs-4"><div class="block-of-content">.fs-4</div></div>
-                    <div class="fs-8"><div class="block-of-content">.fs-8</div></div>
-                    <div class="fs-5"><div class="block-of-content">.fs-5</div></div>
-                    <div class="fs-7"><div class="block-of-content">.fs-7</div></div>
-                    <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
-                    <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
-                    <div class="fs-1"><div class="block-of-content">.fs-1</div></div>
-                    <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
-                    <div class="fs-5"><div class="block-of-content">.fs-5</div></div>
-                </div>
+                        <div>.fs-container .custom-gap</div>
+                        <div class="fs-container custom-gap container-of-content">
+                            <div class="fs-12"><div class="block-of-content">.fs-12</div></div>
+                            <div class="fs-1"><div class="block-of-content">.fs-1</div></div>
+                            <div class="fs-11"><div class="block-of-content">.fs-11</div></div>
+                            <div class="fs-2"><div class="block-of-content">.fs-2</div></div>
+                            <div class="fs-10"><div class="block-of-content">.fs-10</div></div>
+                            <div class="fs-3"><div class="block-of-content">.fs-3</div></div>
+                            <div class="fs-9"><div class="block-of-content">.fs-9</div></div>
+                            <div class="fs-4"><div class="block-of-content">.fs-4</div></div>
+                            <div class="fs-8"><div class="block-of-content">.fs-8</div></div>
+                            <div class="fs-5"><div class="block-of-content">.fs-5</div></div>
+                            <div class="fs-7"><div class="block-of-content">.fs-7</div></div>
+                            <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
+                            <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
+                            <div class="fs-1"><div class="block-of-content">.fs-1</div></div>
+                            <div class="fs-6"><div class="block-of-content">.fs-6</div></div>
+                            <div class="fs-5"><div class="block-of-content">.fs-5</div></div>
+                        </div>
 
         <!-- CODE EXAMPLE -->
         <pre><code>
@@ -430,295 +832,657 @@
             --fs-spacing-row: 15px;
         }
         </code></pre>
+                        
+                    </section>
+
+                    <!-- Reverse Classes -->
+                    <section id="reverse" class="page-section">
+                        <h2>Reverse Classes</h2>
+
+                        <div>.fs-container</div>
+                        <div class="container-of-content">
+                            <div class="fs-container ">
+                                <div class="fs-6">
+                                    <div class="block-of-content">.fs-6<br> 
+                                        <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                    </div>
+                                </div>
+                                <div class="fs-6">
+                                    <div class="block-of-content">.fs-6<br> 
+                                        Example Text
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-6
+                    &lt;br&gt; &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+                        
+                        <p>vs.</p>
+
+                        <div>.fs-container .fs-row-reverse</div>
+                        <div class="container-of-content ">
+                            <div class="fs-container fs-row-reverse">
+                                <div class="fs-6">
+                                    <div class="block-of-content">.fs-6
+                                        <br> <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                    </div>
+                                </div>
+                                <div class="fs-6">
+                                    <div class="block-of-content">.fs-6
+                                        <br> Example Text
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-row-reverse"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-6
+                    &lt;br&gt; &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                        <p>It works with fs-row as well.</p>
+
+                        <div>.fs-row .fs-row-reverse</div>
+                        <div class="container-of-content">
+                            <div class="fs-row fs-row-reverse">
+                                <div class="fs-6">
+                                    <div class="block-of-content">.fs-6
+                                        <br> <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                    </div>
+                                </div>
+                                <div class="fs-6">
+                                    <div class="block-of-content">.fs-6<br> Example Text</div>
+                                </div>
+                            </div>
+                        </div>
                 
-            </section>
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-row fs-row-reverse"&gt;
 
-            <!-- Reverse Classes -->
-            <section>
-                <br><h2>Reverse Classes</h2>
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-6
+                    &lt;br&gt; &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
 
-                <div>.fs-container</div>
-                <div class="fs-container container-of-content">
-                    <div class="fs-6"><div class="block-of-content">.fs-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                    <div class="fs-6"><div class="block-of-content">.fs-6<br> Example Text</div></div>
-                </div>
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-6
+                    &lt;br&gt; Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                        <p>Plus it works with responsive. In this example on mobile the image will always be on top but on larger screens the content and image will alternate.</p>
+
+                        <div>.fs-container .fs-m-row-reverse</div>
+
+                        <div class="container-of-content">
+                            <div class="fs-container fs-m-row-reverse">
+                                <div class="fs-m-6">
+                                    <div class="block-of-content">.fs-m-6
+                                        <br> <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                    </div>
+                                </div>
+                                <div class="fs-m-6">
+                                    <div class="block-of-content">.fs-m-6
+                                        <br> Example Text
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-row-reverse"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-6
+                    &lt;br&gt; &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+                        
+                    </section>
+
+                    <!-- ALignment Examples -->
+                    <section id="alignment" class="page-section">
+                        <h2>Alignment Examples</h2>
+
+                        <!-- Align Items -->
+                        <div>
+                            <p>Use flex classes to align flex columns within flex container along horizontal axis</p>
+
+                            <!-- Align Item - Top -->
+                            <div>
+
+                                <span> fs-top</span>
+                                <div class="container-of-content ">
+                                    <div class="fs-container fs-top">
+                                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-top"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                            </div>
+
+                            <!-- Align Item - Middle -->
+                            <div class="m-top">
+
+                                <span> fs-middle</span>
+                                <div class="container-of-content">
+                                    <div class="fs-container fs-middle">
+                                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-middle"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                            </div>
+                            
+                            <!-- Align Item - Bottom -->
+                            <div class="m-top">
+                                <span> fs-bottom</span>
+                                <div class="container-of-content">
+                                    <div class="fs-container fs-bottom">
+                                        <div class="fs-m-6">
+                                            <div class="block-of-content">.fs-m-6
+                                                <br> <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="fs-m-6">
+                                            <div class="block-of-content">.fs-m-6
+                                                <br> Example Text
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-bottom"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6
+                    &lt;br&gt; Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+                            
+                        </div>
+                        
+                        <!-- Align Self -->
+                        <div>
+                            <p> To align flex columns independent of one another you, can also add a class to the specific flex element.</p>
+
+                            <!-- Align Self - Top -->
+                            <div>
+                                <span> fs-self-top</span>
+                                <div class="container-of-content ">
+                                    <div class="fs-container">
+                                        <div class="fs-m-4">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                                <br>Example Text
+                                            </div>
+                                        </div>
+                                        <div class="fs-m-4 fs-self-top">
+                                            <div class="block-of-content">.fs-self-top</div>
+                                        </div>
+                                        <div class="fs-m-4">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                                <br>Example Text
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                 
-                vs. <br>
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container"&gt;
 
-                <div>.fs-container .fs-row-reverse</div>
-                <div class="fs-container container-of-content fs-row-reverse">
-                    <div class="fs-6"><div class="block-of-content">.fs-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                    <div class="fs-6"><div class="block-of-content">.fs-6<br> Example Text</div></div>
-                </div>
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                    &lt;br&gt;Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
 
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-4 fs-self-top"&gt;
+                &lt;div class="block-of-content"&gt;.fs-self-top&lt;/div&gt;
+            &lt;/div&gt;
 
-                <p>It works with fs-row as well.</p>
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                    &lt;br>Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
 
-                .fs-row .fs-row-reverse
-                <div class="fs-row container-of-content fs-row-reverse">
-                    <div class="fs-6">
-                        <div class="block-of-content">.fs-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div>
-                    </div>
-                    <div class="fs-6">
-                        <div class="block-of-content">.fs-6<br> Example Text</div>
-                    </div>
-                </div>
-
-                <p>Plus it works with responsive. In this example on mobile the image will always be on top but on larger screens the content and image will alternate.</p>
-
-                <div>.fs-container .fs-m-row-reverse</div>
-
-                <div class="fs-container container-of-content fs-m-row-reverse">
-                    <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                    <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
-                </div>
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+                            
+                            <!-- Align Self - Middle -->
+                            <div class="m-top">
+                                <span> fs-self-middle</span>
+                                <div class="container-of-content ">
+                                    <div class="fs-container">
+                                        <div class="fs-m-4">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                                <br>Example Text
+                                            </div>
+                                        </div>
+                                        <div class="fs-m-4 fs-self-middle">
+                                            <div class="block-of-content">.fs-self-middle</div>
+                                        </div>
+                                        <div class="fs-m-4">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                                <br>Example Text
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                 
-            </section>
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container"&gt;
 
-            <!-- ALignment Examples -->
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                    &lt;br&gt;Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
 
-            <section>
-                <br>
-                <h2>Alignment Examples</h2>
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-4 fs-self-middle"&gt;
+                &lt;div class="block-of-content"&gt;.fs-self-middle&lt;/div&gt;
+            &lt;/div&gt;
 
-                <div>
-                    <p>Use flex classes to align flex columns within flex container along horizontal axis</p>
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                    &lt;br>Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
 
-                    <span> fs-top</span>
-                    <div class="fs-container container-of-content fs-top">
-                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+                            
+                            <!-- Align Self - Middle -->
+                            <div class="m-top">
+                                <span> fs-self-bottom</span>
+                                <div class="container-of-content ">
+                                    <div class="fs-container">
+                                        <div class="fs-m-4">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                                <br>Example Text
+                                            </div>
+                                        </div>
+                                        <div class="fs-m-4 fs-self-bottom">
+                                            <div class="block-of-content">.fs-self-bottom</div>
+                                        </div>
+                                        <div class="fs-m-4">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                                <br>Example Text
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                    &lt;br&gt;Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-4 fs-self-bottom"&gt;
+                &lt;div class="block-of-content"&gt;.fs-self-bottom&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-4"&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                    &lt;br>Example Text
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+                            
+                        </div>
+                        
+                    </section>
+
+                    <!-- Fluid vs Forced Container -->
+                    <section id="fluid-forced" class="page-section">
+                        <h2>"Fluid" Container vs Forced Container</h2>
+                        
+                        <!-- Fluid -->
+                        <div>
+                            <p>
+                                In some cases you may want to really leverage flexbox to literally flex in size to fill up row, or you may want columns to be differnt widths. Which people often call "fluid" when you want to use this then you use "fs-container" class and on each direct child you put a fs class. This method uses Flexbox css.
+                            </p>
+                            <span>.fs-container</span>
+                            <div class="container-of-content">
+                                <div class="fs-container ">
+                                    <div class="fs-m-6">
+                                        <div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="fs-m-6">
+                                        <div class="block-of-content">.fs-m-6<br> Example Text</div>
+                                    </div>
+                                    <div class="fs-m-12">
+                                        <div class="block-of-content">.fs-m-12<br> Example Text</div>
+                                    </div>
+                                    <div class="fs-m-7">
+                                        <div class="block-of-content">.fs-m-7<br> Example Text</div>
+                                    </div>
+                                    <div class="fs-m-2">
+                                        <div class="block-of-content">.fs-m-2<br> Example Text</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container "&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6&lt;br&gt; &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-6&lt;br&gt; Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-12"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-12&lt;br&gt; Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 4  --&gt;</span>
+            &lt;div class="fs-m-7"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-7&lt;br&gt; Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 5  --&gt;</span>
+            &lt;div class="fs-m-2"&gt;
+                &lt;div class="block-of-content"&gt;.fs-m-2&lt;br&gt; Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+                        
+                        <!-- Forced -->
+                    <div>
+                            <p>
+                                In other cases, you may want to predetermine how many columns there are, and if you are okay with the columns always being equal widths. We call this Forced and you use the "fs-forced-container" class and then instead of adding a class to each direct child, on that container you indicate the ammount of columns you want to force. This method uses Grid css.
+                            </p>
+
+                            <div>
+                                <span>.fs-forced-container ,fs-col-count-1 ,fs-col-count-m-2</span>
+                                <div class="container-of-content">
+                                    <div class="fs-forced-container fs-col-count-1 fs-col-count-m-2">
+                                        <div class="">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="block-of-content">Example Text</div>
+                                        </div>
+                                        <div class="">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="">
+                                            <div class="block-of-content">Example Text</div>
+                                        </div>
+                                        <div class="">
+                                            <div class="block-of-content">
+                                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-1 fs-col-count-m-2"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 4  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 5  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+
+                            <div class="m-top">
+                                <span>.fs-forced-container .fs-col-count-1 .fs-col-count-m-3</span>
+                                <div class="container-of-content">
+                                    <div class="fs-forced-container fs-col-count-1 fs-col-count-m-3">
+                                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                                        <div class=""><div class="block-of-content">Example Text</div></div>
+                                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                                        <div class=""><div class="block-of-content">Example Text</div></div>
+                                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-1 fs-col-count-m-3"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 4  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 5  --&gt;</span>
+            &lt;div class=""&gt;
+                &lt;div class="block-of-content"&gt;
+                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
                     </div>
+                        
+                    </section>
 
-                    <span> fs-middle</span>
-                    <div class="fs-container container-of-content fs-middle">
-                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
-                    </div>
+                    <!-- Create Mixins -->
+                    <section class="page-section">
+                        <h2>How to create your own classes uses the mixins</h2>
+                    </section>
                     
-                    <span> fs-bottom</span>
-                    <div class="fs-container container-of-content fs-bottom">
-                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                        <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
-                    </div>
-                </div>
-                
-                <div>
-                    <p> To align flex columns independent of one another you, can also add a class to the specific flex element.</p>
+                    <!-- Name Origins -->
+                    <section class="page-section">
+                        <h2>Where did the name come from?</h2>
+                        <p>
+                            My coworkers originally kept adding a form of my name to it calling it FlexBrox which I was flattered by however, I wanted a naming convention that made sense. I am a bit old school and used to working in tables both for early web development and in HTML emails. When I try to explain other grid systems I realized that classes like "col-1" does not mean one column it means it spans across one column in your grid. Which is similar to the colspan attribute you find on tables in HTML. Since we are using flexbox as our base I combine them to be Flexspan.
+                        </p>
+                    </section>
 
-                    <span> fs-self-top</span>
-                    <div class="fs-container container-of-content ">
-                        <div class="fs-m-4">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                                <br>Example Text
-                            </div>
-                        </div>
-                        <div class="fs-m-4 fs-self-top">
-                            <div class="block-of-content">.fs-self-top</div>
-                        </div>
-                        <div class="fs-m-4">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                                <br>Example Text
-                            </div>
-                        </div>
-                    </div>
+                </main> <!--/ Page Content -->
 
-                    <span> fs-self-middle</span>
-                    <div class="fs-container container-of-content ">
-                        <div class="fs-m-4">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                                <br>Example Text
-                            </div>
-                        </div>
-                        <div class="fs-m-4 fs-self-middle">
-                            <div class="block-of-content">.fs-self-middle</div>
-                        </div>
-                        <div class="fs-m-4">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                                <br>Example Text
-                            </div>
-                        </div>
-                    </div>
-
-                    <span> fs-self-bottom</span>
-                    <div class="fs-container container-of-content ">
-                        <div class="fs-m-4">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                                <br>Example Text
-                            </div>
-                        </div>
-                        <div class="fs-m-4 fs-self-bottom">
-                            <div class="block-of-content">.fs-self-bottom</div>
-                        </div>
-                        <div class="fs-m-4">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                                <br>Example Text
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </section>
-
-            <!-- Fluid vs Forced Container -->
-
-            <section>
-                <br><h2>"Fluid" Container vs Forced Container</h2>
-                
-                <!-- Fluid -->
-                <div>
-                    <p>
-                        In some cases you may want to really leverage flexbox to literally flex in size to fill up row, or you may want columns to be differnt widths. Which people often call "fluid" when you want to use this then you use "fs-container" class and on each direct child you put a fs class. This method uses Flexbox css.
-                    </p>
-                    <span>.fs-container</span>
-                    <div class="container-of-content">
-                        <div class="fs-container ">
-                            <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                            <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> Example Text</div></div>
-                            <div class="fs-m-12"><div class="block-of-content">.fs-m-12<br> Example Text</div></div>
-                            <div class="fs-m-7"><div class="block-of-content">.fs-m-7<br> Example Text</div></div>
-                            <div class="fs-m-2"><div class="block-of-content">.fs-m-2<br> Example Text</div></div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Forced -->
-               <div>
-                    <p>
-                        In other cases, you may want to predetermine how many columns there are, and if you are okay with the columns always being equal widths. We call this Forced and you use the "fs-forced-container" class and then instead of adding a class to each direct child, on that container you indicate the ammount of columns you want to force. This method uses Grid css.
-                    </p>
-
-                    <span>.fs-forced-container .fs-col-count-2</span>
-                    <div class="fs-forced-container fs-col-count-2 container-of-content">
-                        <div class="">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="block-of-content">Example Text</div>
-                        </div>
-                        <div class="">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                            </div>
-                        </div>
-                        <div class="">
-                            <div class="block-of-content">Example Text</div>
-                        </div>
-                        <div class="">
-                            <div class="block-of-content">
-                                <img src="https://via.placeholder.com/210x55?text=img" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-        <!-- CODE EXAMPLE  -->                   
-        <pre><code>
-        &lt;div class="fs-forced-container fs-col-count-2 container-of-content"&gt;
-
-            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;
-                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            
-            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
-            &lt;/div&gt;
-
-            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;
-                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-
-            <span class="txt-comment">&lt;!-- Column 4  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
-            &lt;/div&gt;
-
-            <span class="txt-comment">&lt;!-- Column 5  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;
-                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        </code></pre>
-
-                    <span>.fs-forced-container .fs-col-count-3</span>
-                    <div class="fs-forced-container fs-col-count-3 container-of-content">
-                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                        <div class=""><div class="block-of-content">Example Text</div></div>
-                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                        <div class=""><div class="block-of-content">Example Text</div></div>
-                        <div class=""><div class="block-of-content"><img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
-                    </div>
-               </div>
-
-        <!-- CODE EXAMPLE  -->                   
-        <pre><code>
-        &lt;div class="fs-forced-container fs-col-count-3 container-of-content"&gt;
-
-            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;
-                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-            
-            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
-            &lt;/div&gt;
-
-            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;
-                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-
-            <span class="txt-comment">&lt;!-- Column 4  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
-            &lt;/div&gt;
-
-            <span class="txt-comment">&lt;!-- Column 5  --&gt;</span>
-            &lt;div class=""&gt;
-                &lt;div class="block-of-content"&gt;
-                    &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
-                &lt;/div&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-        </code></pre>
-                
-            </section>
-
-            <!-- Create Mixins -->
-            <section>
-                <br><h2>How to create your own classes uses the mixins</h2>
-            </section>
-            
-            <!-- Name Origins -->
-            <section>
-                <br><h2>Where did the name come from?</h2>
-                <p>
-                    My coworkers originally kept adding a form of my name to it calling it FlexBrox which I was flattered by however, I wanted a naming convention that made sense. I am a bit old school and used to working in tables both for early web development and in HTML emails. When I try to explain other grid systems I realized that classes like "col-1" does not mean one column it means it spans across one column in your grid. Which is similar to the colspan attribute you find on tables in HTML. Since we are using flexbox as our base I combine them to be Flexspan.
-                </p>
-            </section>
-
-    </div>
+            </div> <!--/ FS Container -->
+        </div> <!--/ Page Wrap -->
 
         <script src="" async defer></script>
     </body>
