@@ -141,7 +141,7 @@
 
                     <!-- 12 Grid System -->
                     <section id="grid-system" class="page-section">
-                        <h2>Fluid Width 12 Grid System</h2>
+                        <h2>Based on 12 Grid System</h2>
 
                             <div>
                                 <p>
@@ -565,7 +565,7 @@
                         <p>Percent based widths allow fluid resizing of columns and rows, taking up the remaining space within the flex container.</p>
                         
                         <div class="container-of-content">
-                            <div class="fs-container">
+                            <div class="fs-container fs-fluid">
                                 <div class="fs-1">
                                     <div class="block-of-content">fs-1</div>
                                 </div>
@@ -579,9 +579,23 @@
 
                             <br>
 
-                            <div class="fs-container">
+                            <div class="fs-container fs-fluid">
+                                <div class="fs-1 fs-no-grow">
+                                    <div class="block-of-content">fs-1 fs-no-grow</div>
+                                </div>
                                 <div class="fs-1">
                                     <div class="block-of-content">fs-1</div>
+                                </div>
+                                <div class="fs-1">
+                                    <div class="block-of-content">fs-1</div>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="fs-container">
+                                <div class="fs-auto">
+                                    <div class="block-of-content">fs-auto</div>
                                 </div>
                                 <div class="fs-5">
                                     <div class="block-of-content">fs-5</div>
@@ -594,7 +608,7 @@
 
         <!-- CODE EXAMPLE  -->
         <pre><code>
-        &lt;div class="fs-container"&gt;
+        &lt;div class="fs-container fs-fluid"&gt;
 
             <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
             &lt;div class="fs-1"&gt;
@@ -613,7 +627,7 @@
             
         &lt;/div&gt;
 
-        &lt;div class="fs-container"&gt;
+        &lt;div class="fs-container fs-fluid"&gt;
 
             <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
             &lt;div class="fs-1"&gt;

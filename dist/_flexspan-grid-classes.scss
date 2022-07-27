@@ -1,65 +1,16 @@
-// Classes needed to trigger flex
-.container-fluid, .container {
-    margin-right: auto;
-    margin-left: auto;
-}
-
-// .container-fluid {
-//     padding-right: var(--outer-margin, 2rem);
-//     padding-left: var(--outer-margin, 2rem);
-// }                             
-
 .fs-container {
-    // box-sizing: border-box;
-    // display: flex;
-    // flex: 0 1 auto;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // margin-right: var(--gutter-compensation, -0.5rem);
-    // margin-left: var(--gutter-compensation, -0.5rem);
-
     @include flex(flex, row, wrap, space-between, start, start  );
 }
 
-.fs-container {
-    // box-sizing: border-box;
-    // display: flex;
-    // flex: 0 1 auto;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // margin-right: var(--gutter-compensation, -0.5rem);
-    // margin-left: var(--gutter-compensation, -0.5rem);
-
-    @include flex(flex, row, wrap, space-between, start, start  );
-}
 
 .fs-row {
-    // box-sizing: border-box;
-    // display: flex;
-    // flex: 0 1 auto;
-    // flex-direction: row;
-    // flex-wrap: wrap;
-    // margin-right: var(--gutter-compensation, -0.5rem);
-    // margin-left: var(--gutter-compensation, -0.5rem);
-
     @include flex(flex, row, nowrap, space-between, stretch, start );
 }
 
-// Distributed Grid
-// .fs-forced-container {
-//     display: grid;
-//     gap: var(--fs-spacing-row) var(--fs-spacing-col);
-// }
 
 .fs-row-gap {
     margin-bottom: var(--fs-spacing-row);
 }
-
-// TODO: Make reverse be able to be used on breakpoiont
-
-// TODO: Look into incoprprating offsets
-
-// NOTE: Wait for your feedback if we need to do first- last-
 
 // Iterations through all the sizes for Flexbox styles
 
@@ -68,16 +19,22 @@
 }
 
 @for $i from 1 through 12 {  //12 Colmun Grid
-    //  @if $i == 12 {
-    //     .fs-#{$i} {
-    //         @include flex-col($i,12,null,null,1,0,null)
-    //     }
-    // }
-    // @else {
+     @if $i == 12 {
         .fs-#{$i} {
+            @include flex-col($i,12,null,null,0,0,100%)
+        }
+    }
+    @else {
+        .fs-#{$i} {
+            @include flex-col($i,12,null,null,0,0,null)
+        }
+    }
+}
+
+@for $i from 1 through 12 {  //12 Colmun Grid
+        .fs-fluid .fs-#{$i} {
             @include flex-col($i,12,null,null,1,0,null)
         }
-    // }
 }
 
 // Reverse Direction Classes
@@ -148,6 +105,13 @@
     justify-content: flex-end;
 }
 
+//  Flex Growth Classes
+
+
+.fs-container .fs-no-grow {
+    flex-grow: 0;
+}
+
 // Off Set styles
 
 @for $i from 1 through 12 {  //12 Colmun Grid
@@ -174,8 +138,21 @@
     @include breakpoint($breakpointSize) {
 
         // 12 Colmun Grid
-        @for $i from 1 through 12 { 
+        @for $i from 1 through 12 {  //12 Colmun Grid
+            @if $i == 12 {
+                .fs-#{$name}-#{$i} {
+                   @include flex-col($i,12,null,null,0,0,100%)
+               }
+           }
+           @else {
             .fs-#{$name}-#{$i} {
+                   @include flex-col($i,12,null,null,0,0,null)
+               }
+           }
+       }
+
+        @for $i from 1 through 12 { 
+            .fs-fluid .fs-#{$name}-#{$i} {
                 @include flex-col($i,12,null,null,1,1)
             }
         }
@@ -252,6 +229,13 @@
         
         .fs-#{$name}-end {
             justify-content: flex-end;
+        }
+
+
+        //  Flex Growth Classes
+
+        .fs-container  .fs-#{$name}-no-grow {
+            flex-grow: 0;
         }
 
         // Off Set styles

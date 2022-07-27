@@ -63,7 +63,12 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 		$flex-basis: percentage($col / $grid-columns);
 
 		@if $flexbox-grid-mixins-grid-type == skeleton {
-			$flex-basis: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
+
+			@if $flex-basis == 100% {
+				$flex-basis: 100%;
+			} @else {
+				$flex-basis: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
+			}
 
 		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
 			// @if $gutter and unit($gutter) == '%' {
