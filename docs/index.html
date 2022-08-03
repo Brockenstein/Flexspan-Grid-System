@@ -71,7 +71,7 @@
                             <a href="#alignment">Grid Alignment</a>
                         </li>
                         <li>
-                            <a href="#fluid-forced">Fluid vs Forced Container</a>
+                            <a href="#fluid-forced">Flex vs Forced Container</a>
                         </li>
                     </ul>
                 </aside>
@@ -145,13 +145,13 @@
 
                             <div>
                                 <p>
-                                    These classes are based on a 12 column grid system. So instead of trying to determine what percentage width your element needs to be you can use these classes you just need to know how many columns your element will span across. A helpful hint is when creating the page layout items from a designed in Zeplin you can turn on the grid and see how many columns your layout spans. 
+                                    These classes are based on a 12 column grid system. So instead of trying to determine what percentage width your element needs to be you can use these classes you just need to know how many columns your element will span across. A helpful hint is when creating the page layout items from a design in Zeplin you can turn on the grid and see how many columns your layout spans. 
                                 </p>
                                 <p> 
                                     Using these classes produces a percent based flex-basis allowing for fluid resizing of elements to fall into their own rows with an equal yet controllable gapping between elements. Think of classes you use as creating the the percentage by taking the number you use in the class and dividing it by 12 and then moving the decimal point over two places. For example .fs-12 would span 100% of the parent container and .fs-6 would span 50% and .fs-4 would be 33.33%.
                                 </p>
             
-                                <p>Keep in mind, if the cotents of the flexspan does not allow the width of the element to shrink to its needed width, then it will grow.</p>
+                                <p>Keep in mind, if the contents of the flexspan does not allow the width of the element to shrink to its needed width, then it will grow.</p>
                             </div>
 
                             <div>.fs-container</div>
@@ -348,6 +348,7 @@
                             </ul>
                         </div>
 
+                        <div>.fs-container</div>
                         <div class="container-of-content">
                             <div class="fs-container">
                                 <div class="fs-6 fs-m-4">
@@ -424,6 +425,7 @@
                         <h2>Nested Grids</h2>
                         <p>Nesting grids inside grids inside grids is a prime example of how to do complex layouts. Though, keep in mind when you are developing sites you should keep your layout classes separate from your element styles. In this example below you will see any styling goes on separate classes from the grid system classes. </p>
                         
+                        <div>.fs-container</div>
                         <div class="container-of-content">
                             <div class="fs-container container-level1">
 
@@ -562,8 +564,11 @@
                     <!-- Flex Fluid -->
                     <section id="fluid" class="page-section">
                         <h2>Fluid</h2>
-                        <p>Percent based widths allow fluid resizing of columns and rows, taking up the remaining space within the flex container.</p>
+                        <p>With the grid system, other than having percentage based columns you also have the flexibility to utilize fluid columns which resize based off the existing space in the flex container.</p>
+
+                        <p class="info-box"> To enable fluid columns you can do so by adding <span class="txt--blue txt-bold">".fs-fluid"</span> to the parent container.</p>
                         
+                        <div>.fs-container .fs-fluid</div>
                         <div class="container-of-content">
                             <div class="fs-container fs-fluid">
                                 <div class="fs-1">
@@ -574,34 +579,6 @@
                                 </div>
                                 <div class="fs-1">
                                     <div class="block-of-content">fs-1</div>
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <div class="fs-container fs-fluid">
-                                <div class="fs-1 fs-no-grow">
-                                    <div class="block-of-content">fs-1 fs-no-grow</div>
-                                </div>
-                                <div class="fs-1">
-                                    <div class="block-of-content">fs-1</div>
-                                </div>
-                                <div class="fs-1">
-                                    <div class="block-of-content">fs-1</div>
-                                </div>
-                            </div>
-
-                            <br>
-
-                            <div class="fs-container">
-                                <div class="fs-auto">
-                                    <div class="block-of-content">fs-auto</div>
-                                </div>
-                                <div class="fs-5">
-                                    <div class="block-of-content">fs-5</div>
-                                </div>
-                                <div class="fs-2">
-                                    <div class="block-of-content">fs-2</div>
                                 </div>
                             </div>
                         </div>
@@ -626,12 +603,33 @@
             &lt;/div&gt;
             
         &lt;/div&gt;
+        </code></pre>
 
-        &lt;div class="fs-container fs-fluid"&gt;
+                        <p class="info-box"> You can also make a column fluid by adding <span class="txt--blue txt-bold">".fs-auto"</span> in place of the percentage columns</p>
+
+                        <div>.fs-container</div>
+                        <div class="container-of-content">
+
+                            <div class="fs-container">
+                                <div class="fs-auto">
+                                    <div class="block-of-content">fs-auto</div>
+                                </div>
+                                <div class="fs-5">
+                                    <div class="block-of-content">fs-5</div>
+                                </div>
+                                <div class="fs-2">
+                                    <div class="block-of-content">fs-2</div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-container"&gt;
 
             <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
-            &lt;div class="fs-1"&gt;
-                &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
+            &lt;div class="fs-auto"&gt;
+                &lt;div class="block-of-content"&gt;fs-auto&lt;/div&gt;
             &lt;/div&gt;
 
             <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
@@ -646,6 +644,44 @@
             
         &lt;/div&gt;
         </code></pre>
+                        <p class="info-box"> In certain cases where you might want majority of columns to be fluid but specific ones to be defined sizes, you can do so by adding <span class="txt--blue txt-bold">".fs-no-grow"</span> to a flex element.</p>
+
+                        <div>.fs-container</div>
+                        <div class="container-of-content">
+                            <div class="fs-container fs-fluid">
+                                <div class="fs-1 fs-no-grow">
+                                    <div class="block-of-content">fs-1 fs-no-grow</div>
+                                </div>
+                                <div class="fs-1">
+                                    <div class="block-of-content">fs-1</div>
+                                </div>
+                                <div class="fs-1">
+                                    <div class="block-of-content">fs-1</div>
+                                </div>
+                            </div>
+                        </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-container fs-fluid"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1  --&gt;</span>
+            &lt;div class="fs-1 fs-no-grow"&gt;
+                &lt;div class="block-of-content"&gt;fs-1 fs-no-grow&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-1"&gt;
+                &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
                         
                     </section>
                     
@@ -655,6 +691,7 @@
 
                         <p> When using "flex-row", columns are forced into one singular line rather than breaking into multiple lines once width of columns exceeds container.</p>
 
+                        <div>.fs-row .fs-row-gap</div>
                         <div class="container-of-content">
                             <div class="fs-row fs-row-gap">
                                 <div class="fs-4">
@@ -692,6 +729,7 @@
 
                         <p>When removing the class "fs-row-gap", there is no margin below "fs-row" containers</p>
 
+                        <div>.fs-row</div>
                         <div class="container-of-content">
                             <div class="fs-row">
                                 <div class="fs-4">
@@ -769,6 +807,7 @@
                         <h2>Responsive Columns</h2>
                         <p>Responsively change the amount the element spans depending on the breakpoint.</p>
 
+                        <div>.fs-container</div>
                         <div class="container-of-content">
                             <div class="fs-container">
                                 <div class="fs-12 fs-l-1">
@@ -1007,16 +1046,262 @@
 
                     <!-- ALignment Examples -->
                     <section id="alignment" class="page-section">
-                        <h2>Alignment Examples</h2>
+                        <h2>Grid Alignment</h2>
+                        <p> When utilizing the grid system, you have the ability to align columns based off their horizontal or vertical to leverage layouts to your liking. </p>
+
+                        <!-- Justify Content -->
+
+                        <p class="info-box"><span class="txt-bold">Vertical:</span> Use flex classes to align flex columns within flex container along horizontal axis</p>
+
+                            <!-- Justify Content - Start -->
+                            <div>
+
+                                <div class=""> fs-start</div>
+                                <div class="container-of-content ">
+                                    <div class="fs-container fs-start">
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-start"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1 --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                            </div>
+
+                            <!-- Justify Content - Center -->
+                            <div class="m-top">
+
+                                <div class=""> fs-center</div>
+                                <div class="container-of-content ">
+                                    <div class="fs-container fs-center">
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-center"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1 --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                            </div>
+
+                            <!-- Justify Content - end -->
+                            <div class="m-top">
+
+                                <div class=""> fs-end</div>
+                                <div class="container-of-content ">
+                                    <div class="fs-container fs-end">
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-end"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1 --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                            </div>
+
+                            <!-- Justify Content - Around -->
+                            <div class="m-top">
+
+                                <div class=""> fs-around</div>
+                                <div class="container-of-content ">
+                                    <div class="fs-container fs-around">
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-around"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1 --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                            </div>
+
+                            <!-- Justify Content - Between -->
+                            <div class="m-top">
+
+                                <div class=""> fs-between</div>
+                                <div class="container-of-content ">
+                                    <div class="fs-container fs-between">
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                        <div class="fs-m-3">
+                                            <div class="block-of-content">.fs-m-3</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->                   
+        <pre><code>
+        &lt;div class="fs-container fs-between"&gt;
+
+            <span class="txt-comment">&lt;!-- Column 1 --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Column 3  --&gt;</span>
+            &lt;div class="fs-m-6"&gt;
+                &lt;div class="block-of-content"&gt;
+                    .fs-m-3
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+        &lt;/div&gt;
+        </code></pre>
+
+                            </div>
+
 
                         <!-- Align Items -->
                         <div>
-                            <p>Use flex classes to align flex columns within flex container along horizontal axis</p>
+                            <p class="info-box"><span class="txt-bold">Horizontal:</span> Use flex classes to align flex columns within flex container along horizontal axis</p>
 
                             <!-- Align Item - Top -->
                             <div>
 
-                                <span> fs-top</span>
+                                <div class=""> fs-top</div>
                                 <div class="container-of-content ">
                                     <div class="fs-container fs-top">
                                         <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
@@ -1050,7 +1335,7 @@
                             <!-- Align Item - Middle -->
                             <div class="m-top">
 
-                                <span> fs-middle</span>
+                                <div class=""> fs-middle</div>
                                 <div class="container-of-content">
                                     <div class="fs-container fs-middle">
                                         <div class="fs-m-6"><div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt=""></div></div>
@@ -1083,7 +1368,7 @@
                             
                             <!-- Align Item - Bottom -->
                             <div class="m-top">
-                                <span> fs-bottom</span>
+                                <div class=""> fs-bottom</div>
                                 <div class="container-of-content">
                                     <div class="fs-container fs-bottom">
                                         <div class="fs-m-6">
@@ -1125,11 +1410,10 @@
                         
                         <!-- Align Self -->
                         <div>
-                            <p> To align flex columns independent of one another you, can also add a class to the specific flex element.</p>
-
+                            <p class="info-box"> <span class="txt-bold">Horizontal:</span> To align flex columns independent of one another you, can also add a class to the specific flex element.</p>
                             <!-- Align Self - Top -->
                             <div>
-                                <span> fs-self-top</span>
+                                <div class=""> fs-self-top</div>
                                 <div class="container-of-content ">
                                     <div class="fs-container">
                                         <div class="fs-m-4">
@@ -1181,7 +1465,7 @@
                             
                             <!-- Align Self - Middle -->
                             <div class="m-top">
-                                <span> fs-self-middle</span>
+                                <div class=""> fs-self-middle</div>
                                 <div class="container-of-content ">
                                     <div class="fs-container">
                                         <div class="fs-m-4">
@@ -1231,9 +1515,9 @@
         </code></pre>
                             </div>
                             
-                            <!-- Align Self - Middle -->
+                            <!-- Align Self - Bottom -->
                             <div class="m-top">
-                                <span> fs-self-bottom</span>
+                                <div class=""> fs-self-bottom</div>
                                 <div class="container-of-content ">
                                     <div class="fs-container">
                                         <div class="fs-m-4">
@@ -1289,28 +1573,28 @@
 
                     <!-- Fluid vs Forced Container -->
                     <section id="fluid-forced" class="page-section">
-                        <h2>"Fluid" Container vs Forced Container</h2>
+                        <h2>"Flex" Container vs Forced Container</h2>
                         
                         <!-- Fluid -->
                         <div>
                             <p>
-                                In some cases you may want to really leverage flexbox to literally flex in size to fill up row, or you may want columns to be differnt widths. Which people often call "fluid" when you want to use this then you use "fs-container" class and on each direct child you put a fs class. This method uses Flexbox css.
+                                In some cases you may want to really leverage flexbox to literally flex in size to fill up row, columns to be differnt widths, or even have content centered along the vertical axis. This is when you use the "fs-container" class and and add differnt classes to the flex/child elements to display it to your liking. This method uses Flexbox css.
                             </p>
                             <span>.fs-container</span>
                             <div class="container-of-content">
-                                <div class="fs-container ">
-                                    <div class="fs-m-6">
-                                        <div class="block-of-content">.fs-m-6<br> <img src="https://via.placeholder.com/210x55?text=img" alt="">
+                                <div class="fs-container fs-center">
+                                    <div class="fs-m-4">
+                                        <div class="block-of-content">.fs-m-4<br> <img src="https://via.placeholder.com/210x55?text=img" alt="">
                                         </div>
                                     </div>
-                                    <div class="fs-m-6">
-                                        <div class="block-of-content">.fs-m-6<br> Example Text</div>
+                                    <div class="fs-m-4">
+                                        <div class="block-of-content">.fs-m-4<br> Example Text</div>
                                     </div>
-                                    <div class="fs-m-12">
-                                        <div class="block-of-content">.fs-m-12<br> Example Text</div>
+                                    <div class="fs-m-4">
+                                        <div class="block-of-content">.fs-m-4<br> Example Text</div>
                                     </div>
-                                    <div class="fs-m-7">
-                                        <div class="block-of-content">.fs-m-7<br> Example Text</div>
+                                    <div class="fs-m-5">
+                                        <div class="block-of-content">.fs-m-5<br> Example Text</div>
                                     </div>
                                     <div class="fs-m-2">
                                         <div class="block-of-content">.fs-m-2<br> Example Text</div>
@@ -1355,7 +1639,7 @@
                         <!-- Forced -->
                     <div>
                             <p>
-                                In other cases, you may want to predetermine how many columns there are, and if you are okay with the columns always being equal widths. We call this Forced and you use the "fs-forced-container" class and then instead of adding a class to each direct child, on that container you indicate the ammount of columns you want to force. This method uses Grid css.
+                                In other cases, you may want to predetermine how many columns there are, and if you are okay with the columns always being equal widths. We call this Forced and you use the "fs-forced-container" class and then instead of adding a class to each direct child, on that container you indicate the amount of columns you want to force. This method uses Grid css.
                             </p>
 
                             <div>
@@ -1498,3 +1782,4 @@
         <script src="" async defer></script>
     </body>
 </html>
+
