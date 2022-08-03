@@ -69,7 +69,7 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 * [Control the Gap](https://brockenstein.github.io/Flexspan-Grid-System/#gap)
 * [Reverse Classes](https://brockenstein.github.io/Flexspan-Grid-System/#reverse)
 * [Grid Alignment](https://brockenstein.github.io/Flexspan-Grid-System/#alignment)
-* [Fluid vs Forced Container](https://brockenstein.github.io/Flexspan-Grid-System/#fluid-forced)
+* [Flex vs Forced Container](https://brockenstein.github.io/Flexspan-Grid-System/#fluid-forced)
 
 # Team
 ## Main Contributors
