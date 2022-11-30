@@ -17,6 +17,7 @@
 	@if $flex-direction {
 		flex-direction: $flex-direction;
 	}
+
 	@if $flex-wrap {
 		flex-wrap: $flex-wrap;
 	}
@@ -24,9 +25,11 @@
 	@if $justify-content {
 		justify-content: $justify-content;
 	}
+
 	@if $align-items {
 		align-items: $align-items;
 	}
+
 	@if $align-content {
 		align-content: $align-content;
 	}
@@ -49,8 +52,6 @@
 		} @else {
 			$flex-basis: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
 		}
-
-		
 
 		@if $col-offset and unit($col-offset) == '%' {
 			$flex-basis: $flex-basis + $col-offset;
@@ -133,9 +134,11 @@
 	@if $height != null {
 		height: $height;
 	}
+
 	@if $max-height != null {
 		max-height: $max-height;
 	}
+
 	@if $min-height != null {
 		min-height: $min-height;
 	}
@@ -147,8 +150,8 @@
 	@if type-of($col) == number and unitless($col) == true {
 		$flex-basis: percentage($col / $grid-columns);
 	}
-		margin-left: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
-	
-	@content;
 
+	margin-left: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
+
+	@content;
 }
