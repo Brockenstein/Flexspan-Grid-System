@@ -1,22 +1,14 @@
 // "Flexspan Grid System" Mixins
-// Version 0.0.1
+// Version 1.0.0
 // Orginally based on Flexbox Grid Mixins (LibSass) Version 0.3.1 by thingsym  https://github.com/thingsym/flexbox-grid-mixins
 //
 // These flexbox mixins help make the Flexspan Grid System but can be used outside of the grid on classes you make yourself.
 // ===================================================================
 
-@charset 'utf-8';
-
-// TODO: Look into getting rid of grid type
-$flexbox-grid-mixins-grid-type: skeleton !default;
-$flexbox-grid-mixins-box-sizing: border-box !default;
-$flexbox-grid-mixins-stack: margin-bottom !default;
-
 @mixin flex($display: flex, $flex-direction: null, $flex-wrap: null, $justify-content: null, $align-items: null, $align-content: null)
 {
-	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
-		box-sizing: $flexbox-grid-mixins-box-sizing;
-	}
+	gap: var(--fs-spacing-row) var(--fs-spacing-col);
+	box-sizing: border-box;
 
 	@if $display {
 		display: $display;
@@ -39,16 +31,6 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 		align-content: $align-content;
 	}
 
-	@if $flexbox-grid-mixins-grid-type == skeleton {
-		// @if $gutter {
-		// 	margin-left: $gutter / 2 * -1;
-		// 	margin-right: $gutter / 2 * -1;
-		// }
-		// gap: $gutter;
-		gap: var(--fs-spacing-row) var(--fs-spacing-col);
-		// row-gap: $gutter;
-	}
-
 	@content;
 }
 
@@ -62,21 +44,13 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 		$flex-shrink: 0;
 		$flex-basis: percentage($col / $grid-columns);
 
-		@if $flexbox-grid-mixins-grid-type == skeleton {
-
-			@if $flex-basis == 100% {
-				$flex-basis: 100%;
-			} @else {
-				$flex-basis: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
-			}
-
-		} @else if $flexbox-grid-mixins-grid-type == margin-offset {
-			// @if $gutter and unit($gutter) == '%' {
-			// 	$flex-basis: (100% - ($gutter * ($grid-columns / $col - 1))) / ($grid-columns / $col);
-			// } @else if $gutter and unitless($gutter) == false {
-			// 	$flex-basis: calc( #{$flex-basis} - #{$gutter * ($grid-columns / $col - 1) / ($grid-columns / $col)});
-			// }
+		@if $flex-basis == 100% {
+			$flex-basis: 100%;
+		} @else {
+			$flex-basis: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
 		}
+
+		
 
 		@if $col-offset and unit($col-offset) == '%' {
 			$flex-basis: $flex-basis + $col-offset;
@@ -166,28 +140,6 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 		min-height: $min-height;
 	}
 
-	// @if $gutter and unitless($gutter) == false {
-	// 	@if $flexbox-grid-mixins-grid-type == skeleton {
-	// 		margin-left: $gutter / 2;
-	// 		margin-right: $gutter / 2;
-	// 	} @else if $flexbox-grid-mixins-grid-type == margin-offset {
-	// 		@if type-of($last-child) == bool and $last-child == true {
-	// 			margin-right: 0;
-	// 		} @else {
-	// 			margin-right: $gutter;
-	// 		}
-	// 	}
-
-	// 	@if $flexbox-grid-mixins-stack == margin-top {
-	// 		margin-top: $gutter;
-	// 	} @else if $flexbox-grid-mixins-stack == margin-bottom {
-	// 		margin-bottom: $gutter;
-	// 	} @else if $flexbox-grid-mixins-stack == margin-both {
-	// 		margin-top: $gutter / 2;
-	// 		margin-bottom: $gutter / 2;
-	// 	}
-	// }
-
 	@content;
 }
 
@@ -200,4 +152,3 @@ $flexbox-grid-mixins-stack: margin-bottom !default;
 	@content;
 
 }
-
