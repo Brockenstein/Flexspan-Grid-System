@@ -37,11 +37,9 @@
 	@content;
 }
 
-@mixin flex-col($col: null, $grid-columns: 12, $col-offset: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $last-child: false, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
+@mixin flex-col($col: initial, $grid-columns: 12, $col-offset: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
-	@if $flexbox-grid-mixins-box-sizing == 'border-box' or $flexbox-grid-mixins-box-sizing == 'content-box' {
-		box-sizing: $flexbox-grid-mixins-box-sizing;
-	}
+	box-sizing: border-box;	
 
 	@if type-of($col) == number and unitless($col) == true {
 		$flex-shrink: 0;
@@ -146,12 +144,22 @@
 	@content;
 }
 
-@mixin flex-forced-offset($col: null, $grid-columns: 12, $col-offset: null, $flex-basis: null) {
-	@if type-of($col) == number and unitless($col) == true {
-		$flex-basis: percentage($col / $grid-columns);
+@mixin flex-forced-offset($col-offset: null, $grid-columns: 12) {
+	$flex-basis:0; // Starting basis will been overwritten
+	@if type-of($col-offset) == number and unitless($col-offset) == true {
+
+		@if($col-offset == $grid-columns) {
+			@error "You can not offset the same ammount of column that exist in the grid"
+		}
+
+		$flex-basis: percentage($col-offset/ $grid-columns);
+	} @else {
+		@error "$col-offset #{$col-offset} must be plain number";
 	}
 
 	margin-left: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
+	
+	flex-grow: 1; // For when it is the only cell in the row
 
 	@content;
 }

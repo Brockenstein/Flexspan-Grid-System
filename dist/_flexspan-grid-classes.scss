@@ -111,9 +111,9 @@
 
 // Off Set styles
 
-@for $i from 1 through 12 {  //12 Colmun Grid
+@for $i from 1 through 11 {  // For 12 Colmun Grid, we can only offset 11 columns
     .fs-offset-#{$i} {
-        @include flex-forced-offset($i,12,$i)
+        @include flex-forced-offset($i,12)
     }
 }
 
@@ -236,9 +236,9 @@ $x: 1;
 
         // Off Set styles
 
-        @for $i from 1 through 12 {  //12 Colmun Grid
+        @for $i from 1 through 11 {  // For 12 Colmun Grid, we can only offset 11 columns
             .fs-offset-#{$name}-#{$i} {
-                @include flex-forced-offset($i,12,$i)
+                @include flex-forced-offset($i,12)
             }
         }
 
