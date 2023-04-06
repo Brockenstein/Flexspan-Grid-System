@@ -1,11 +1,11 @@
 // "Flexspan Grid System" Mixins
-// Version 1.0.0
-// Orginally based on Flexbox Grid Mixins (LibSass) Version 0.3.1 by thingsym  https://github.com/thingsym/flexbox-grid-mixins
+// Version 1.1.0
 //
-// These flexbox mixins help make the Flexspan Grid System but can be used outside of the grid on classes you make yourself.
+// These flexbox mixins are needed as part of the Flexspan Grid System but can be used outside of the grid system to generate classes new  yourself.
+// Documentation on how to use these mixins https://brockenstein.github.io/Flexspan-Grid-System/#mixins
 // ===================================================================
 
-@mixin flex($display: flex, $flex-direction: null, $flex-wrap: null, $justify-content: null, $align-items: null, $align-content: null)
+@mixin flex-parent($display: flex, $flex-direction: null, $flex-wrap: null, $justify-content: null, $align-items: null, $align-content: null)
 {
 	gap: var(--fs-spacing-row) var(--fs-spacing-col);
 	box-sizing: border-box;
@@ -37,24 +37,29 @@
 	@content;
 }
 
-@mixin flex-col($col: initial, $grid-columns: 12, $col-offset: null, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: auto, $order: null, $shorthand: true, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
+@mixin flex-item($col: initial, $grid-columns: 12, $col-offset: null, $offset-direction: left, $use-flex: true, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: null, $order: null, $shorthand: true, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
 	box-sizing: border-box;	
 
 	@if type-of($col) == number and unitless($col) == true {
 		$flex-shrink: 0;
-		$flex-basis: percentage($col / $grid-columns);
+		$col-size: percentage($col / $grid-columns);
 
 		@if $flex-basis == 100% {
 			$flex-basis: 100%;
 		} @else {
-			$flex-basis: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
+			// I cam up with two possible calculations for accounting for gap when making the width / flex-basis
+			// $flex-basis: calc( #{$flex-basis} - ( var(--fs-spacing-col) * (#{$col / $grid-columns - 1 } * -1) ) );
+			// Note: This one below works well with the offsets
+			$flex-basis: calc( #{$col-size} - var(--fs-spacing-col) + (var(--fs-spacing-col) / (#{$grid-columns} / #{$col}) ));
+
 		}
 
 		@if $col-offset and unit($col-offset) == '%' {
-			$flex-basis: $flex-basis + $col-offset;
-		} @else if $col-offset and unitless($col-offset) == false {
-			$flex-basis: calc( #{$flex-basis} + #{$col-offset} - var(--fs-spacing-col)  ) ;
+			$col-offset: $col-offset;
+		} @else if $col-offset and unitless($col-offset) == true {
+			// Very similar to flex-basis but we do not need to remove the gap
+			$col-offset: calc( #{$col-size} + (var(--fs-spacing-col) / (#{$grid-columns} / #{$col-offset}) ) );
 		}
 	} @else if type-of($col) == number and unitless($col) == false {
 		$flex-grow: 0;
@@ -89,20 +94,23 @@
 		$flex-basis: 0;
 	}
 
-	@if type-of($shorthand) == bool and $shorthand == true {
-		flex: $flex-grow $flex-shrink $flex-basis;
-	} @else {
-		flex-basis: $flex-basis;
-		flex-grow: $flex-grow;
-		flex-shrink: $flex-shrink;
-	}
+	@if type-of($use-flex) == bool and $use-flex == true {
 
-	@if $align-self != null {
-		align-self: $align-self;
-	}
+		@if type-of($shorthand) == bool and $shorthand == true {
+			flex: $flex-grow $flex-shrink $flex-basis;
+		} @else {
+			flex-basis: $flex-basis;
+			flex-grow: $flex-grow;
+			flex-shrink: $flex-shrink;
+		}
 
-	@if type-of($order) == number {
-		order: $order;
+		@if $align-self != null {
+			align-self: $align-self;
+		}
+
+		@if type-of($order) == number  {
+			order: $order;
+		}
 	}
 
 	@if type-of($width) == bool and $width == true {
@@ -141,25 +149,11 @@
 		min-height: $min-height;
 	}
 
-	@content;
-}
-
-@mixin flex-forced-offset($col-offset: null, $grid-columns: 12) {
-	$flex-basis:0; // Starting basis will been overwritten
-	@if type-of($col-offset) == number and unitless($col-offset) == true {
-
-		@if($col-offset == $grid-columns) {
-			@error "You can not offset the same ammount of column that exist in the grid"
-		}
-
-		$flex-basis: percentage($col-offset/ $grid-columns);
-	} @else {
-		@error "$col-offset #{$col-offset} must be plain number";
+	@if $col-offset != null and $offset-direction == 'left' {
+		margin-left: $col-offset;
+	} @else if $col-offset != null and $offset-direction == 'right' {
+		margin-right: $col-offset;
 	}
-
-	margin-left: calc( #{$flex-basis} - ( var(--fs-spacing-col) ) );
-	
-	flex-grow: 1; // For when it is the only cell in the row
 
 	@content;
 }

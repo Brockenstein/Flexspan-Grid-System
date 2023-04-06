@@ -15,30 +15,29 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 
     ```
     
-        // Breakpoint mixin
+        // Breakpoint mixin used with the Flexspan Grid System
         @mixin breakpoint($break) {
             @media screen and (min-width: $break) {
                 @content;
             }
         }
-    
-       // Default variables, easily overwritten
-        $xxs: 360px !default;
-        $xs: 480px !default;
-        $s: 550px !default; 
-        $sm: 600px !default;
-        $m: 768px!default;
-        $ml: 960px !default;
-        $l: 1024px !default;
-        $xl: 1200px !default;
-        $xxl: 1400px !default; 
+
+        // Breakpoints you may use across the site within mixins
+        $xxs: 360px;
+        $xs: 480px;
+        $s: 550px; 
+        $sm: 600px;
+        $m: 768px;
+        $ml: 960px;
+        $l: 1024px;
+        $xl: 1200px;
+        $xxl: 1400px; 
         
-        
-        // Breakpoints you plan on using for the grid system
+        // Breakpoints you plan on using with the Flexspan Grid System
         $breakpointsUsedForGrid:
-          "s" $s,
-          "m" $m,
-          "l" $l;
+        "s" $s,
+        "m" $m,
+        "l" $l;
         
         // CSS Variable
         // NOTE: You can not add SCSS variables to CSS variables, however you can use CSS variables in SCSS mixins
@@ -47,7 +46,7 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
             --fs-spacing-row: 15px;
         }
         
-        // Importing the mixings for flexbox
+        // Importing the mixings for the Flexspan Grid System
         @import "_flexspan-grid-mixins", "_flexspan-grid-classes";
     ```
 

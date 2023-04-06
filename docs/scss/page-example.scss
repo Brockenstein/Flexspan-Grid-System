@@ -35,8 +35,6 @@ $breakpointsUsedForGrid:
     --fs-spacing-row: 15px;
 }
 
-
-
 // Importing the mixings for flexbox
 // In this example I am backing out to the root of the github folder structure and grabbing the files from the dist folder
 @import "../../dist/_flexspan-grid-mixins", "../../dist/_flexspan-grid-classes";

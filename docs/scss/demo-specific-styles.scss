@@ -6,35 +6,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
-// Variables
-
-    $primary: #264653;
-    $primary-dark: darken($primary, 10%);
-    $primary-alt: #2a9d8f;
-    $primary-alt-light: lighten($primary-alt, 50%);
-    $secondary: #e76f51;
-    $secondary-alt: #f4a261;
-    $fs-yellow: #e9c46a;
-
-    // Breakpoint mixin
-    @mixin breakpoint($break) {
-        @media screen and (min-width:$break) {
-            @content;
-        }
+// Breakpoint mixin
+@mixin breakpoint($break) {
+    @media screen and (min-width:$break) {
+        @content;
     }
+}
 
-   // Default variables, easily overwritten
-    $xxs: 360px !default;
-    $xs: 480px !default;
-    $s: 550px !default; 
-    $sm: 600px !default;
-    $m: 768px!default;
-    $ml: 960px !default;
-    $l: 1024px !default;
-    $xl: 1200px !default;
-    $xxl: 1400px !default; 
+// Breakpoints you may use across the site within mixins
+$xxs: 320px;
+$xs: 360px;
+$s: 550px;
+$sm: 600px;
+$m: 768px;
+$ml: 960px;
+$l: 1000px;
+$xl: 1280px;
+$xxl: 1400px;
+    
 
 // Colors
+$primary: #264653;
+$primary-dark: darken($primary, 10%);
+$primary-alt: #2a9d8f;
+$primary-alt-light: lighten($primary-alt, 50%);
+$secondary: #e76f51;
+$secondary-alt: #f4a261;
+$fs-yellow: #e9c46a;
+
 
 .txt {
 
@@ -104,6 +103,15 @@ a {
     }
 }
 
+img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+    object-fit: cover;
+}
+
 .banner {
     background: linear-gradient(90deg, $primary, $primary-alt);
     color: #fff;
@@ -111,6 +119,8 @@ a {
 }
 
 .txt-comment {
+    white-space: pre-wrap;
+    display: inline-block;
     color: $fs-yellow;
 
     &--blue {
@@ -184,8 +194,12 @@ a {
 }
 
 .custom-gap {
+    --fs-spacing-col: 20px;
+    --fs-spacing-row: 5px;
+}
+.custom-gap-2 {
     --fs-spacing-col: 50px;
-    --fs-spacing-row: 15px;
+    --fs-spacing-row: 5px;
 }
 
 .sidebar {
@@ -263,4 +277,60 @@ a {
 
 #github {
     padding: 20px 20px 40px;
+}
+
+
+.info-table {
+    
+
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 2px dotted $primary-alt;
+    margin: 0 0 1.625em;
+    width: 100%;
+
+    
+    td,th {
+        border-top: 2px dotted $primary-alt;
+        border-right: 2px dotted $primary-alt;
+        padding: 0.2em;
+    }
+
+    th {
+        background: $primary-alt;
+        color: #fff;
+        border-color: #fff !important;
+    }
+
+    td {
+        vertical-align: top;
+    }
+}
+
+.topper {
+    background: #162830;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+    color: #fff;
+}
+
+
+.breadcrumb {
+    margin: 1rem 0;
+    display: block;
+}
+
+.breadcrumb:before {
+    content:'';
+    height: 0px;
+    width: 0px;
+    display: inline-block;
+    border-right: solid 6px black;
+    border-bottom: solid 6px transparent;
+    border-top: solid 6px transparent;
+    margin: 0 6px 0 0;
+}
+
+.txt-cyan {
+    color: cyan;
 }

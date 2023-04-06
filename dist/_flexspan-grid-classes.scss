@@ -1,37 +1,47 @@
+// "Flexspan Grid System" Classes
+// Version 1.1.0
+// Documentation on how to use the classes https://brockenstein.github.io/Flexspan-Grid-System/
+// ===================================================================
+
 .fs-container {
-    @include flex(flex, row, wrap, space-between, start, start);
+    @include flex-parent(flex, row, wrap, space-between, stretch, start);
 }
 
 .fs-row {
-    @include flex(flex, row, nowrap, space-between, stretch, start);
+    @include flex-parent(flex, row, nowrap, space-between, stretch, start);
 }
 
 .fs-row-gap {
     margin-bottom: var(--fs-spacing-row);
 }
 
+.fs-nogap {
+    --fs-spacing-col: 0px;
+    --fs-spacing-row: 0px;
+}
+
 // Iterations through all the sizes for Flexbox styles
 
 .fs-auto {
-    @include flex-col(auto,12,null,null,1,1,null)
+    @include flex-item(auto,12,null,null,true,null,1,1)
 }
 
 @for $i from 1 through 12 {  //12 Colmun Grid
     @if $i == 12 {
         .fs-#{$i} {
-            @include flex-col($i,12,null,null,0,0,100%)
+            @include flex-item($i,12,null,null,true,null,0,0,100%)
         }
     }
     @else {
         .fs-#{$i} {
-            @include flex-col($i,12,null,null,0,0,null)
+            @include flex-item($i,12,null,null,true,null,0,0)
         }
     }
 }
 
 @for $i from 1 through 12 {  //12 Colmun Grid
         .fs-fluid .fs-#{$i} {
-            @include flex-col($i,12,null,null,1,0,null)
+            @include flex-item($i,12,null,null,true,null,1,0)
         }
 }
 
@@ -43,6 +53,14 @@
 
 .fs-col-reverse {
     flex-direction: column-reverse;
+}
+
+.fs-first-in-row {
+    grid-row-start: 1;
+}
+
+.fs-first-in-col {
+    grid-column-start: 1;
 }
 
 //  Alignment Classes
@@ -79,6 +97,22 @@
     align-self: flex-end;
 }
 
+.fs-content-top {
+    align-content: flex-start;
+}
+
+.fs-content-middle {
+    align-content: center;
+}
+
+.fs-content-stretch {
+    align-content: stretch;
+}
+
+.fs-content-bottom {
+    align-content: flex-end;
+}
+
 .fs-around {
     justify-content: space-around;
 }
@@ -111,25 +145,43 @@
 
 // Off Set styles
 
-@for $i from 1 through 11 {  // For 12 Colmun Grid, we can only offset 11 columns
-    .fs-offset-#{$i} {
-        @include flex-forced-offset($i,12)
-    }
+@for $i from 0 through 11 {  // For 12 Colmun Grid, we can only offset 11 columns
+        .fs-offset-left-#{$i} {
+            @include flex-item($i,12,$i,left,false)
+        }
+        .fs-offset-right-#{$i} {
+            @include flex-item($i,12,$i,right,false)
+        }
 }
 
+// CSS Grid column count classes
 @for $i from 1 through 12 {  //12 Colmun Grid
     .fs-col-count-#{$i} {
         display: grid;
         gap: var(--fs-spacing-row) var(--fs-spacing-col);
 
-        grid-template-columns: repeat(#{$i}, 1fr);
+        grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
+    }
+    .fs-col-span-#{$i} {
+        grid-column: span #{$i};
+    }
+}
+
+// Width classes
+@for $i from 1 through 12 {  //12 Colmun Grid
+    .fs-exact-#{$i} {
+        @include flex-item($i,12,null,null,false,null,null,null,null,null,null,true,true,true)
+    }
+    .fs-max-#{$i} {
+        @include flex-item($i,12,null,null,false,null,null,null,null,null,null,false,true,false)
+    }
+    .fs-min-#{$i} {
+        @include flex-item($i,12,null,null,false,null,null,null,null,null,null,false,false,true)
     }
 }
 
 
 // Styles For each breakpoint
-
-$x: 1;
 @each $name, $breakpointSize, $size in $breakpointsUsedForGrid {
 
     @include breakpoint($breakpointSize) {
@@ -138,26 +190,44 @@ $x: 1;
         @for $i from 1 through 12 {  //12 Colmun Grid
             @if $i == 12 {
                 .fs-#{$name}-#{$i} {
-                    @include flex-col($i,12,null,null,0,0,100%)
+                    @include flex-item($i,12,null,null,true,null,0,0,100%)
                 }
             }
             @else {
             .fs-#{$name}-#{$i} {
-                    @include flex-col($i,12,null,null,0,0,null)
+                    @include flex-item($i,12,null,null,true,null,0,0)
                 }
             }
         }
 
         @for $i from 1 through 12 { 
             .fs-fluid .fs-#{$name}-#{$i} {
-                @include flex-col($i,12,null,null,1,1)
+                @include flex-item($i,12,null,null,true,null,1,1)
             }
         }
 
         .fs-#{$name}-auto {
-            @include flex-col(auto,12,null,null,1,1,null)
+            @include flex-item(auto,12,null,null,true,null,1,1)
         }
 
+        // Width classes
+        @for $i from 1 through 12 {  //12 Colmun Grid
+            .fs-exact-#{$name}-#{$i} {
+                @include flex-item($i,12,null,null,false,null,null,null,null,null,null,true,true,true)
+            }
+            .fs-max-#{$name}-#{$i} {
+                @include flex-item($i,12,null,null,false,null,null,null,null,null,null,false,true,false)
+            }
+            .fs-min-#{$name}-#{$i} {
+                @include flex-item($i,12,null,null,false,null,null,null,null,null,null,false,false,true)
+            }
+        }
+
+        // No gap in all the breakpoints
+        .fs-#{$name}-nogap {
+            --fs-spacing-col: 0px;
+            --fs-spacing-row: 0px;
+        }
 
         // Iterations through all the breakpoint sizes for reverse styles
 
@@ -167,6 +237,14 @@ $x: 1;
 
         .fs-#{$name}-col-reverse {
             flex-direction: column-reverse;
+        }
+
+        .fs-#{$name}-first-in-row {
+            grid-row-start: 1;
+        }
+        
+        .fs-#{$name}-first-in-col {
+            grid-column-start: 1;
         }
 
        // Iterations through all the breakpoint sizes for Alignment Classes
@@ -227,7 +305,6 @@ $x: 1;
             justify-content: flex-end;
         }
 
-
         //  Flex Growth Classes
 
         .fs-container  .fs-#{$name}-no-grow {
@@ -236,26 +313,33 @@ $x: 1;
 
         // Off Set styles
 
-        @for $i from 1 through 11 {  // For 12 Colmun Grid, we can only offset 11 columns
-            .fs-offset-#{$name}-#{$i} {
-                @include flex-forced-offset($i,12)
+        @for $i from 0 through 11 {  // For 12 Colmun Grid, we can only offset 11 columns
+            .fs-offset-left-#{$name}-#{$i} {
+                @include flex-item($i,12,$i,left,false)
+            }
+            .fs-offset-right-#{$name}-#{$i} {
+                @include flex-item($i,12,$i,right,false)
+
             }
         }
 
-        // Grid Solution
+        // CSS Grid column count classes
 
         @for $i from 1 through 12 {  //12 Colmun Grid
             .fs-col-count-#{$name}-#{$i} {
-                grid-template-columns: repeat(#{$i}, 1fr);
+                grid-template-columns: repeat(#{$i}, minmax(0, 1fr));
                 &.fs-forced-container {
                     display: grid;
                     gap: var(--fs-spacing-row) var(--fs-spacing-col);
                 }
             }
+
+            .fs-col-span-#{$name}-#{$i} {
+                grid-column: span #{$i};
+            }
         }
 
 
     }
-    $x: $x + 1;
 
 }
