@@ -14,15 +14,16 @@
 }
 
 // Breakpoints you may use across the site within mixins
-$xxs: 320px;
-$xs: 360px;
-$s: 550px;
-$sm: 600px;
-$m: 768px;
-$ml: 960px;
-$l: 1000px;
-$xl: 1280px;
-$xxl: 1400px;
+// Using same breakpoints that we set in the page-example.scss
+$xxs: 360px !default;
+$xs: 480px !default;
+$s: 550px !default; 
+$sm: 600px !default;
+$m: 768px!default;
+$ml: 960px !default;
+$l: 1024px !default;
+$xl: 1200px !default;
+$xxl: 1400px !default; 
     
 
 // Colors
