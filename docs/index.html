@@ -1112,6 +1112,108 @@
 
 
 
+                    <p class="m-top">You can also specify both the starting column and the span to create gaps between grid items. This is useful when you want to skip columns or create specific spacing.</p>
+                    <div class="info-box">
+                        fs-col-start-{<span class="txt-bold txt--blue">Start Column</span>}-span-{<span class="txt-bold txt--blue">Number of Columns to span</span>} <br> 
+                        fs-col-start-{<span class="txt-bold txt--blue">breakpoint</span>}-{<span class="txt-bold txt--blue">Start Column</span>}-span-{<span class="txt-bold txt--blue">Number of Columns to span</span>}
+                    </div>
+
+                    <div>
+                        <span>fs-forced-container fs-col-count-12</span>
+                        <div class="container-of-content">
+                            <div class="fs-forced-container fs-col-count-12">
+                                <div class="fs-col-start-1-span-6">
+                                    <div class="block-of-content">
+                                        fs-col-start-1-span-6<br>
+                                        Columns 1-6
+                                    </div>
+                                </div>
+                                <div class="fs-col-start-8-span-5">
+                                    <div class="block-of-content">
+                                        fs-col-start-8-span-5<br>
+                                        Columns 8-12 (gap at column 7)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!-- CODE EXAMPLE  -->                   
+<pre><code>
+&lt;div class="fs-forced-container fs-col-count-12"&gt;
+
+    <span class="txt-comment">&lt;!-- First block: columns 1-6 --&gt;</span>
+    &lt;div class="fs-col-start-1-span-6"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-1-span-6&lt;br&gt;
+            Columns 1-6
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    <span class="txt-comment">&lt;!-- Second block: columns 8-12 (gap at column 7) --&gt;</span>
+    &lt;div class="fs-col-start-8-span-5"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-8-span-5&lt;br&gt;
+            Columns 8-12 (gap at column 7)
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+
+                    <div class="m-top">
+                        <span>fs-forced-container fs-col-count-12 (with breakpoint)</span>
+                        <div class="container-of-content">
+                            <div class="fs-forced-container fs-col-count-12">
+                                <div class="fs-col-start-1-span-12 fs-col-start-m-1-span-6">
+                                    <div class="block-of-content">
+                                        fs-col-start-1-span-12<br>
+                                        fs-col-start-m-1-span-6<br>
+                                        Full width on mobile, columns 1-6 on medium+
+                                    </div>
+                                </div>
+                                <div class="fs-col-start-1-span-12 fs-col-start-m-8-span-5">
+                                    <div class="block-of-content">
+                                        fs-col-start-1-span-12<br>
+                                        fs-col-start-m-8-span-5<br>
+                                        Full width on mobile, columns 8-12 on medium+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!-- CODE EXAMPLE  -->                   
+<pre><code>
+&lt;div class="fs-forced-container fs-col-count-12"&gt;
+
+    <span class="txt-comment">&lt;!-- First block: full width on mobile, columns 1-6 on medium+ --&gt;</span>
+    &lt;div class="fs-col-start-1-span-12 fs-col-start-m-1-span-6"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-1-span-12&lt;br&gt;
+            fs-col-start-m-1-span-6&lt;br&gt;
+            Full width on mobile, columns 1-6 on medium+
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    <span class="txt-comment">&lt;!-- Second block: full width on mobile, columns 8-12 on medium+ --&gt;</span>
+    &lt;div class="fs-col-start-1-span-12 fs-col-start-m-8-span-5"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-1-span-12&lt;br&gt;
+            fs-col-start-m-8-span-5&lt;br&gt;
+            Full width on mobile, columns 8-12 on medium+
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+
+                    <div class="info-box m-top">
+                        <p><span class="txt-bold">When to use:</span></p>
+                        <ul>
+                            <li>Use <code>fs-col-span-{i}</code> when you want an item to span multiple columns starting from its natural position</li>
+                            <li>Use <code>fs-col-start-{start}-span-{span}</code> when you need to specify both the starting column and span, especially to create gaps between grid items</li>
+                        </ul>
+                    </div>
+
                     </section>
 
 

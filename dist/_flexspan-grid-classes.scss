@@ -203,6 +203,15 @@
     }
 }
 
+// CSS Grid column start and span classes
+@for $start from 1 through 12 {  //12 Column Grid
+    @for $span from 1 through (13 - $start) {  // Ensure start + span - 1 <= 12
+        .fs-col-start-#{$start}-span-#{$span} {
+            grid-column: #{$start} / span #{$span};
+        }
+    }
+}
+
 // Width classes
 @for $i from 1 through 12 {  //12 Column Grid
     .fs-exact-#{$i} {
@@ -427,6 +436,15 @@
 
             .fs-col-span-#{$name}-#{$i} {
                 grid-column: span #{$i};
+            }
+        }
+
+        // CSS Grid column start and span classes
+        @for $start from 1 through 12 {  //12 Column Grid
+            @for $span from 1 through (13 - $start) {  // Ensure start + span - 1 <= 12
+                .fs-col-start-#{$name}-#{$start}-span-#{$span} {
+                    grid-column: #{$start} / span #{$span};
+                }
             }
         }
 

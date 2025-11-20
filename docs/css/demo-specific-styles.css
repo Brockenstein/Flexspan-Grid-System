@@ -41,7 +41,7 @@ h2 {
 }
 
 pre {
-  background: #162830;
+  background: rgb(21.9834710744, 40.4958677686, 48.0165289256);
   color: #fff;
   padding: 10px;
   border-radius: 0 0 10px 10px;
@@ -95,12 +95,12 @@ img {
 }
 
 .container-of-content {
-  border: #162830 solid 2px;
+  border: rgb(21.9834710744, 40.4958677686, 48.0165289256) solid 2px;
   padding: 20px;
 }
 
 .block-of-content {
-  background-color: #d3f3ef;
+  background-color: rgb(210.8190954774, 243.1809045226, 239.2412060302);
   min-height: 100%;
   word-break: break-all;
   padding: 10px;
@@ -116,7 +116,7 @@ img {
 }
 
 .column-level1 {
-  background: #d3f3ef;
+  background: rgb(210.8190954774, 243.1809045226, 239.2412060302);
   min-height: 15px;
   padding: 20px;
   overflow: auto;
