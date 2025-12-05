@@ -33,7 +33,7 @@
 
                 <!-- Table Contents -->
                 <aside class="sidebar fs-l-3">
-                        
+
                     <h2>Table of Contents</h2>
 
                     <ul class="select-links">
@@ -78,13 +78,13 @@
                         </li>
                         <li>
                             <a href="examples.html">Examples</a>
-                        </li>                        
+                        </li>
                     </ul>
                 </aside>
 
                 <!-- Page Content -->
                 <main class="content-wrap fs-l-9">
-                    
+
                     <div id="github">
                         <div class="info-box">
                             Want to view github content? <a href="https://github.com/Brockenstein/Flexspan-Grid-System">Click here to see Repo</a>
@@ -93,9 +93,9 @@
 
                     <!-- Flex Grid Intro -->
                     <section id="intro" class="page-section">
-                        
+
                         <h2>What is different about this grid system from the others out there?</h2>
-                        
+
                         <ul>
                             <li><b>No IE support.</b> The <a href="https://death-to-ie11.com/">death to internet explorer happened on June 15, 2022</a>. Which is good because having to build in IE fallbacks or just simply supporting it out of the box has been holding grid systems back from using the latest CSS advances.</li>
                             <li><b>Pre-defining rows is optional.</b> Most grid systems force you to create a row and even calls the sections inside of it a column. Whereas this grid system allows you to truly use flex and have rows naturally form as the content needs to but for when you need, forcing rows is still available.</li>
@@ -110,8 +110,8 @@
                         <h2>How to put in on the site</h2>
                         <p>
                             Sites are often complex and end up having multiple styles sheets. Remember you only want 1 set of classes to appear across your own site. So with that in mind we have two files you can pull into your site and an example of the code you can use to pull in those files.</p>
-                            
-                            <p>The "flexspan-grid-mixins.scss" if a file you could pull in multiple SCSS partials if need be as repeating mixins in your SCSS files will not add duplicates to the final CSS file like classes do. However be cautious with adding the ":root" CSS and the "flexspan-grid-classes.scss" file multiple times in you SCSS files since these are creating classes it will duplicate those classes and you don't want to accidently overwrite yourself or have a bloated CSS file.  
+
+                            <p>The "flexspan-grid-mixins.scss" if a file you could pull in multiple SCSS partials if need be as repeating mixins in your SCSS files will not add duplicates to the final CSS file like classes do. However be cautious with adding the ":root" CSS and the "flexspan-grid-classes.scss" file multiple times in you SCSS files since these are creating classes it will duplicate those classes and you don't want to accidently overwrite yourself or have a bloated CSS file.
                         </p>
 
                         <p>So if you are making a brand new SCSS style sheet you would add the following to your base SCSS partial or layout SCSS partial depending on your <a href="https://itnext.io/structuring-your-sass-projects-c8d41fa55ed4">SASS Structure conventions</a>.</p>
@@ -129,27 +129,27 @@
         <span class="txt-comment">// Breakpoints you may use across the site within mixins</span>
         $xxs: 360px;
         $xs: 480px;
-        $s: 550px; 
+        $s: 550px;
         $sm: 600px;
         $m: 768px;
         $ml: 960px;
         $l: 1024px;
         $xl: 1200px;
-        $xxl: 1400px; 
-        
+        $xxl: 1400px;
+
         <span class="txt-comment">// Breakpoints you plan on using with the Flexspan Grid System</span>
         $breakpointsUsedForGrid:
             "s" $s,
             "m" $m,
             "l" $l;
-        
+
         <span class="txt-comment">// CSS Variable</span>
         <span class="txt-comment">// NOTE: You can not add SCSS variables to CSS variables, however you can use CSS variables in SCSS mixins</span>
         :root {
             --fs-spacing-col: 15px;
             --fs-spacing-row: 15px;
         }
-        
+
         <span class="txt-comment">// Importing the mixings for the Flexspan Grid System</span>
         @import "_flexspan-grid-mixins", "_flexspan-grid-classes";
         </code></pre>
@@ -163,11 +163,11 @@
                                 <p>
                                     These classes are based on a 12 column grid system. So instead of trying to determine what percentage width your element needs to be you can use these classes you just need to know how many columns your element will span across.
                                 </p>
-                                <p> 
+                                <p>
                                     Using these classes produces a percent based flex-basis allowing for elements to fall into their own rows with an equal yet controllable gapping between elements. Think of classes you use as creating the the percentage by taking the number you use in the class and dividing it by 12 and then moving the decimal point over two places. For example fs-12 would span 100% of the parent container and fs-6 would span 50% and fs-4 would be 33.33%.
                                 </p>
 
-            
+
                                 <p>Keep in mind, if the contents of the element does not allow the width of the element to shrink to its correct width, then you may see more rows form than you expect. To address this look into Fluid and Max-Width options.</p>
                             </div>
 
@@ -222,7 +222,7 @@
                                     <div class="fs-5">
                                         <div class="block-of-content">fs-5</div>
                                     </div>
-                                </div>  
+                                </div>
                             </div>
 
         <!-- CODE EXAMPLE  -->
@@ -311,7 +311,7 @@
 
         &lt;/div&gt;
         </code></pre>
-                    
+
                             <p>
                                 To create a "50/50" section all you have to do is create an element with a class of fs-container and then add two elements inside of it with a class of fs-6. In some other grid systems you have to create rows but in this grid system you do not have to, two flex-span-6 elements will fit on one row naturally.
                             </p>
@@ -324,7 +324,7 @@
                                 </div>
                             </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container"&gt;
 
@@ -348,7 +348,7 @@
                         </p>
 
                         <div class="info-box">
-                            Ex. 
+                            Ex.
                             <ul>
                                 <li>
                                     fs-{<span class="txt-bold txt--blue">breakpoint</span>}-6
@@ -412,7 +412,7 @@
             &lt;div class="fs-12 fs-m-4"&gt;
                 &lt;div class="block-of-content"&gt;fs-12 fs-m-4&lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
 
         &lt;div class="fs-container"&gt;
@@ -431,7 +431,7 @@
             &lt;div class="fs-4 fs-m-5 fs-l-6"&gt;
                 &lt;div class="block-of-content"&gt;fs-4 fs-m-5 fs-l-6&lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -441,7 +441,7 @@
                     <section id="nested-grid" class="page-section ">
                         <h2>Nested Grids</h2>
                         <p>Nesting grids inside grids inside grids is a prime example of how to do complex layouts. Though, keep in mind when you are developing sites you should keep your layout classes separate from your element styles. In this example below you will see any styling goes on separate classes from the grid system classes. </p>
-                        
+
                         <div>fs-container</div>
                         <div class="container-of-content">
                             <div class="fs-container container-level1">
@@ -449,13 +449,13 @@
                                 <!-- Level 1  -->
                                 <div class="fs-m-7 column-level1">
                                     Level 1: fs-m-7
-    
+
                                     <div class="fs-container container-level2">
-    
+
                                         <!-- Level 2   -->
                                         <div class="fs-m-9 column-level2">
                                             Level 2: fs-m-9
-    
+
                                             <div class="fs-container container-level3">
                                                 <!-- Level 3   -->
                                                 <div class="fs-m-4 column-level3">
@@ -467,38 +467,38 @@
                                                 </div>
                                             </div>
                                         </div>
-    
+
                                         <!-- Level 2   -->
                                         <div class="fs-m-3 column-level2">
                                             Level 2: fs-m-3
-                                            
+
                                             <!-- Level 3   -->
                                             <div class="fs-container container-level3">
                                                 <div class="fs-auto column-level3">
                                                     Level 3: fs-m-auto
                                                 </div>
                                             </div>
-                                        </div>         
+                                        </div>
                                     </div>
                                 </div>
-    
+
                                 <!-- Level 1   -->
                                 <div class="fs-m-5 column-level1">
                                     Level 1: fs-m-5
-    
+
                                     <div class="fs-container container-level2">
-    
+
                                         <!-- Level 2   -->
                                         <div class="fs-m-12 column-level2">
                                             Level 2: fs-m-12
-    
+
                                             <div class="fs-container container-level3">
-    
+
                                                 <!-- Level 3  -->
                                                 <div class="fs-m-6 column-level3">
                                                     Level 3: fs-m-6
                                                 </div>
-    
+
                                                 <!-- Level 3  -->
                                                 <div class="fs-m-6 column-level3">
                                                     Level 3: fs-m-6
@@ -509,7 +509,7 @@
                                 </div>
                             </div>
                         </div>
-                               
+
         <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container"&gt;
@@ -538,14 +538,14 @@
                     <span class="txt-comment">&lt;!-- Level 2  --&gt;</span>
                     &lt;div class="fs-m-3 column-level2"&gt;
                         Level 2: fs-m-3
-                        
+
                         <span class="txt-comment">&lt;!-- Level 3  --&gt;</span>
                         &lt;div class="fs-container container-level3"&gt;
                             &lt;div class="fs-m-auto column-level3"&gt;
                                 Level 3: fs-m-auto
                             &lt;/div&gt;
                         &lt;/div&gt;
-                    &lt;/div&gt;         
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
 
@@ -584,7 +584,7 @@
                         <p>With the grid system, other than having percentage based columns you also have the flexibility to utilize fluid columns which resize based off the existing space in the flex container.</p>
 
                         <p class="info-box"> To enable fluid columns you can do so by adding <span class="txt--blue txt-bold">"fs-fluid"</span> to the parent container.</p>
-                        
+
                         <div>fs-container fs-fluid</div>
                         <div class="container-of-content">
                             <div class="fs-container fs-fluid">
@@ -618,7 +618,7 @@
             &lt;div class="fs-1"&gt;
                 &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -658,7 +658,7 @@
             &lt;div class="fs-2"&gt;
                 &lt;div class="block-of-content"&gt;fs-2&lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
                         <p class="info-box"> In certain cases where you might want majority of columns to be fluid but specific ones to be defined sizes, you can do so by adding <span class="txt--blue txt-bold">"fs-no-grow"</span> to a flex element.</p>
@@ -696,12 +696,12 @@
             &lt;div class="fs-1"&gt;
                 &lt;div class="block-of-content"&gt;fs-1&lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
-                        
+
                     </section>
-                    
+
                     <!-- Forced Rows -->
                     <section id="row" class="page-section">
                         <h2>No-Wrapping Rows</h2>
@@ -821,7 +821,7 @@
                 &lt;div class="block-of-content"&gt;&lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-        
+
         <span class="txt-comment">&lt;!-- fs-row with gap --&gt;</span>
         &lt;div class="fs-row fs-row-gap"&gt;
 
@@ -850,7 +850,7 @@
                     <!-- Fluid vs Forced Container -->
                     <section id="fluid-forced" class="page-section">
                         <h2>"Flexed" Container vs "Forced" Container</h2>
-                        
+
                         <!-- Fluid -->
                         <div>
                             <p>
@@ -879,7 +879,7 @@
                             </div>
                         </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container "&gt;
 
@@ -911,7 +911,7 @@
 
         &lt;/div&gt;
         </code></pre>
-                        
+
                         <!-- Forced -->
                     <div>
                             <p>
@@ -946,7 +946,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-forced-container fs-col-count-1 fs-col-count-m-2"&gt;
 
@@ -956,7 +956,7 @@
                     &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
             <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
             &lt;div class=""&gt;
                 &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
@@ -996,7 +996,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-forced-container fs-col-count-1 fs-col-count-m-3"&gt;
 
@@ -1006,7 +1006,7 @@
                     &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
             <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
             &lt;div class=""&gt;
                 &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
@@ -1034,7 +1034,7 @@
         </code></pre>
                             </div>
                     </div>
-                        
+
 
                     <p>You can still have one element span multiple columns if you need.</p>
                     <div class="info-box">
@@ -1070,7 +1070,7 @@
                             </div>
                         </div>
 
-<!-- CODE EXAMPLE  -->                   
+<!-- CODE EXAMPLE  -->
 <pre><code>
 &lt;div class="fs-forced-container fs-col-count-1 fs-col-count-m-2"&gt;
 
@@ -1080,7 +1080,7 @@
             &lt;img src="https://via.placeholder.com/210x55?text=img" alt=""&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    
+
     <span class="txt-comment">&lt;!-- Column 2  --&gt;</span>
     &lt;div class=""&gt;
         &lt;div class="block-of-content"&gt;Example Text&lt;/div&gt;
@@ -1114,7 +1114,7 @@
 
                     <p class="m-top">You can also specify both the starting column and the span to create gaps between grid items. This is useful when you want to skip columns or create specific spacing.</p>
                     <div class="info-box">
-                        fs-col-start-{<span class="txt-bold txt--blue">Start Column</span>}-span-{<span class="txt-bold txt--blue">Number of Columns to span</span>} <br> 
+                        fs-col-start-{<span class="txt-bold txt--blue">Start Column</span>}-span-{<span class="txt-bold txt--blue">Number of Columns to span</span>} <br>
                         fs-col-start-{<span class="txt-bold txt--blue">breakpoint</span>}-{<span class="txt-bold txt--blue">Start Column</span>}-span-{<span class="txt-bold txt--blue">Number of Columns to span</span>}
                     </div>
 
@@ -1137,7 +1137,7 @@
                             </div>
                         </div>
 
-<!-- CODE EXAMPLE  -->                   
+<!-- CODE EXAMPLE  -->
 <pre><code>
 &lt;div class="fs-forced-container fs-col-count-12"&gt;
 
@@ -1181,7 +1181,7 @@
                             </div>
                         </div>
 
-<!-- CODE EXAMPLE  -->                   
+<!-- CODE EXAMPLE  -->
 <pre><code>
 &lt;div class="fs-forced-container fs-col-count-12"&gt;
 
@@ -1220,7 +1220,7 @@
                     <!-- Gap Sizing -->
                     <section id="gap" class="page-section">
                         <h2>Control the Gap</h2>
-                
+
                         <p>Gutters are the negative space, or gaps, between columns and rows. You can control the gutters for the entire grid at once or just for a particular container by using the CSS variables `--fs-gutter-col` and `--fs-spacing-row` which is already setup at the root level.</p>
 
                         <p>When you need to control the gap of a particular container you can make a class that has that same CSS Variable name with the new size as seen below.</p>
@@ -1254,11 +1254,11 @@
                         }
                         </code></pre>
 
-                        <p class="info-box">Be careful when making a large gap, remember that as you increase the gap that means the width of the columns is being reduced. If you compare the width of the fs-1 from above and below you can see that the larger gap being used below made the columns smaller. 
-                        <br><br>    
+                        <p class="info-box">Be careful when making a large gap, remember that as you increase the gap that means the width of the columns is being reduced. If you compare the width of the fs-1 from above and below you can see that the larger gap being used below made the columns smaller.
+                        <br><br>
                         Additionally, the content in that column is wider than the column which is actually breaking the row. A possible solution for the issue below could be to add an overflow hidden to the fs-1 but we would recommend instead that you just need that cell to take up more than one column.
                         <br><br>
-                    
+
                         Also, remember if you use fs-fluid then if the content breaks out of column width it will grow.
                         </p>
 
@@ -1273,7 +1273,7 @@
                                 --fs-spacing-col: 50px;
                                 --fs-spacing-row: 5px;
                             }
-                            </code></pre>               
+                            </code></pre>
                     </section>
 
                         <!-- Offsets -->
@@ -1360,7 +1360,7 @@
                                 </div>
                                 <div class="fs-offset-left-2 fs-2">
                                     <div class="block-of-content">fs-offset-left-2<br> fs-2</div>
-                                </div>                            
+                                </div>
                             </div>
 
 
@@ -1374,7 +1374,7 @@
                                 </div>
                                 <div class="fs-offset-left-1 fs-2">
                                     <div class="block-of-content">fs-offset-left-1<br> fs-2</div>
-                                </div>                            
+                                </div>
                             </div>
 
                             <br>
@@ -1402,7 +1402,7 @@
                                 </div>
                                 <div class="fs-2">
                                     <div class="block-of-content">fs-2</div>
-                                </div>                            
+                                </div>
                             </div>
 
                             <br>
@@ -1412,12 +1412,12 @@
                                 </div>
                                 <div class="fs-2">
                                     <div class="block-of-content">fs-2</div>
-                                </div>                            
+                                </div>
                             </div>
                         </div>
 
 
-                        
+
                         <!-- CODE EXAMPLE  -->
                         <pre><code>
 <span class="txt-comment">&lt;!-- Positioning a cell spanning 1 columns to the opposite end of the container by offsetting it by 11 columns --&gt;</span>
@@ -1524,7 +1524,7 @@
             &lt;/div&gt;
             &lt;div class="fs-offset-2-2 fs-2&gt;
                 &lt;div class="block-of-content&gt;fs-offset-2-2  fs-2&lt;/div&gt;
-            &lt;/div&gt;                            
+            &lt;/div&gt;
         &lt;/div&gt;
 
 <span class="txt-comment">&lt;!--  3 Cells spanning 2 columns with the first offset by 4 columns and the others offset by 1 column  --&gt;</span>
@@ -1537,7 +1537,7 @@
             &lt;/div&gt;
             &lt;div class="fs-offset-1-3 fs-2&gt;
                 &lt;div class="block-of-content&gt;fs-offset-1-3 fs-2&lt;/div&gt;
-            &lt;/div&gt;                            
+            &lt;/div&gt;
         &lt;/div&gt;
 
 <span class="txt-comment">&lt;!--  3 Cells spanning 2 columns each offset by 2 columns  --&gt;</span>
@@ -1550,7 +1550,7 @@
             &lt;/div&gt;
             &lt;div class="fs-offset-2-3 fs-2&gt;
                 &lt;div class="block-of-content&gt;fs-offset-2-3 fs-2&lt;/div&gt;
-            &lt;/div&gt;                            
+            &lt;/div&gt;
         &lt;/div&gt;
 
 <span class="txt-comment">&lt;!--  6 Cells spanning 2 columns with no offsets  --&gt;</span>
@@ -1572,7 +1572,7 @@
             &lt;/div&gt;
             &lt;div class="fs-2&gt;
                 &lt;div class="block-of-content&gt;fs-2&lt;/div&gt;
-            &lt;/div&gt;                            
+            &lt;/div&gt;
         &lt;/div&gt;
 
 <span class="txt-comment">&lt;!--  6 Cells spanning 1 column each with an offset of 1 column  --&gt;</span>
@@ -1594,7 +1594,7 @@
             &lt;/div&gt;
             &lt;div class="fs-offset-1-6 fs-1&gt;
                 &lt;div class="block-of-content&gt;fs-offset-1-6 fs-1&lt;/div&gt;
-            &lt;/div&gt;                            
+            &lt;/div&gt;
         &lt;/div&gt;
                         </code></pre>
 
@@ -1619,16 +1619,16 @@
                         <div class="info-box">
                             <ul>
                                 <li>
-                                    fs-row-reverse 
+                                    fs-row-reverse
                                 </li>
                                 <li>
-                                    fs-col-reverse 
+                                    fs-col-reverse
                                 </li>
                                 <li>
-                                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-row-reverse 
+                                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-row-reverse
                                 </li>
                                 <li>
-                                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-col-reverse 
+                                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-col-reverse
                                 </li>
                             </ul>
                         </div>
@@ -1637,19 +1637,19 @@
                         <div class="container-of-content">
                             <div class="fs-container ">
                                 <div class="fs-6">
-                                    <div class="block-of-content">fs-6<br> 
+                                    <div class="block-of-content">fs-6<br>
                                         <img src="https://via.placeholder.com/210x55?text=img" alt="">
                                     </div>
                                 </div>
                                 <div class="fs-6">
-                                    <div class="block-of-content">fs-6<br> 
+                                    <div class="block-of-content">fs-6<br>
                                         Example Text
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container"&gt;
 
@@ -1666,10 +1666,10 @@
                     &lt;br&gt; Example Text
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
-                        
+
                         <p>vs.</p>
 
                         <div>fs-container fs-row-reverse</div>
@@ -1688,7 +1688,7 @@
                             </div>
                         </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-row-reverse"&gt;
 
@@ -1705,7 +1705,7 @@
                     &lt;br&gt; Example Text
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -1724,8 +1724,8 @@
                                 </div>
                             </div>
                         </div>
-                
-        <!-- CODE EXAMPLE  -->                   
+
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-row fs-row-reverse"&gt;
 
@@ -1742,7 +1742,7 @@
                     &lt;br&gt; Example Text
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -1765,7 +1765,7 @@
                             </div>
                         </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-m-row-reverse"&gt;
 
@@ -1782,7 +1782,7 @@
                     &lt;br&gt; Example Text
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -1795,17 +1795,17 @@
                     fs-first-in-row
                 </li>
                 <li>
-                    fs-first-in-col 
+                    fs-first-in-col
                 </li>
                 <li>
                     fs-{<span class="txt-bold txt--blue">breakpoint</span>}-first-in-row
                 </li>
                 <li>
-                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-first-in-col 
+                    fs-{<span class="txt-bold txt--blue">breakpoint</span>}-first-in-col
                 </li>
             </ul>
         </div>
-        
+
         <div>fs-forced-container fs-col-count-1 fs-col-count-m-2</div>
         <div class="container-of-content">
             <div class="fs-forced-container fs-col-count-1 fs-col-count-m-2">
@@ -1822,12 +1822,12 @@
             </div>
         </div>
 
-<!-- CODE EXAMPLE  -->                   
+<!-- CODE EXAMPLE  -->
 <pre><code>
 &lt;coming&gt;
 
 </code></pre>
-        
+
         <p>vs.</p>
 
         <div>fs-forced-container fs-col-count-1 fs-col-count-m-2</div>
@@ -1839,17 +1839,17 @@
                     </div>
                 </div>
                 <div class="fs-m-first-in-row">
-                    <div class="block-of-content">fs-m-first-in-row<br> 
+                    <div class="block-of-content">fs-m-first-in-row<br>
                         Example Text
                     </div>
                 </div>
             </div>
         </div>
-        
-<!-- CODE EXAMPLE  -->                   
+
+<!-- CODE EXAMPLE  -->
 <pre><code>
     &lt;coming&gt;
-    
+
     </code></pre>
                     </section>
 
@@ -1880,7 +1880,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-start"&gt;
 
@@ -1904,7 +1904,7 @@
                     fs-m-3
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -1928,7 +1928,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-center"&gt;
 
@@ -1952,7 +1952,7 @@
                     fs-m-3
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -1976,7 +1976,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-end"&gt;
 
@@ -2000,7 +2000,7 @@
                     fs-m-3
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -2024,7 +2024,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-around"&gt;
 
@@ -2048,7 +2048,7 @@
                     fs-m-3
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -2072,7 +2072,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-between"&gt;
 
@@ -2096,7 +2096,7 @@
                     fs-m-3
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -2118,7 +2118,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-top"&gt;
 
@@ -2135,7 +2135,7 @@
                     &lt;br&gt; Example Text
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
@@ -2152,7 +2152,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-middle"&gt;
 
@@ -2169,12 +2169,12 @@
                     &lt;br&gt; Example Text
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
 
                             </div>
-                            
+
                             <!-- Align Item - Bottom -->
                             <div class="m-top">
                                 <div class=""> fs-bottom</div>
@@ -2193,7 +2193,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-bottom"&gt;
 
@@ -2210,13 +2210,13 @@
                     &lt;br&gt; Example Text
                 &lt;/div&gt;
             &lt;/div&gt;
-            
+
         &lt;/div&gt;
         </code></pre>
                             </div>
-                            
+
                         </div>
-                        
+
                         <!-- Align Self -->
                         <div>
                             <p class="info-box"> <span class="txt-bold">Horizontal:</span> To align flex columns independent of one another you, can also add a class to the specific flex element.</p>
@@ -2242,8 +2242,8 @@
                                         </div>
                                     </div>
                                 </div>
-                
-        <!-- CODE EXAMPLE  -->                   
+
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container"&gt;
 
@@ -2271,7 +2271,7 @@
         &lt;/div&gt;
         </code></pre>
                             </div>
-                            
+
                             <!-- Align Self - Middle -->
                             <div class="m-top">
                                 <div class=""> fs-self-middle</div>
@@ -2294,8 +2294,8 @@
                                         </div>
                                     </div>
                                 </div>
-                
-        <!-- CODE EXAMPLE  -->                   
+
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container"&gt;
 
@@ -2323,7 +2323,7 @@
         &lt;/div&gt;
         </code></pre>
                             </div>
-                            
+
                             <!-- Align Self - Bottom -->
                             <div class="m-top">
                                 <div class=""> fs-self-bottom</div>
@@ -2347,7 +2347,7 @@
                                     </div>
                                 </div>
 
-        <!-- CODE EXAMPLE  -->                   
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container"&gt;
 
@@ -2375,13 +2375,240 @@
         &lt;/div&gt;
         </code></pre>
                             </div>
-                            
+
                         </div>
-                        
+
+                        <!-- Justify Self (CSS Grid Only) -->
+                        <div>
+                            <p class="info-box"><span class="txt-bold">CSS Grid Inline-Axis Alignment:</span> Use <code>fs-col-self-*</code> classes to align individual grid items along the inline-axis (horizontally) within their grid cell. <span class="txt-bold">Note:</span> These classes only work in CSS Grid contexts (when using <code>fs-forced-container</code>). Unlike <code>align-self</code> which works in both flexbox and grid, <code>justify-self</code> is CSS Grid only.</p>
+
+                            <!-- Justify Self - Stretch -->
+                            <div>
+                                <div class=""> fs-col-self-stretch</div>
+                                <div class="container-of-content">
+                                    <div class="fs-forced-container fs-col-count-3" style="min-height: 150px;">
+                                        <div class="fs-col-self-stretch">
+                                            <div class="block-of-content">fs-col-self-stretch<br> (default behavior)</div>
+                                        </div>
+                                        <div class="fs-col-self-center">
+                                            <div class="block-of-content">fs-col-self-center</div>
+                                        </div>
+                                        <div class="fs-col-self-start">
+                                            <div class="block-of-content">fs-col-self-start</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-3"&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 1 --&gt;</span>
+            &lt;div class="fs-col-self-stretch"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-stretch&lt;br&gt; (default behavior)&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 2 --&gt;</span>
+            &lt;div class="fs-col-self-center"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-center&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 3 --&gt;</span>
+            &lt;div class="fs-col-self-start"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-start&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+
+                            <!-- Justify Self - Center -->
+                            <div class="m-top">
+                                <div class=""> fs-col-self-center</div>
+                                <div class="container-of-content">
+                                    <div class="fs-forced-container fs-col-count-3" style="min-height: 150px;">
+                                        <div class="fs-col-self-start">
+                                            <div class="block-of-content">fs-col-self-start</div>
+                                        </div>
+                                        <div class="fs-col-self-center">
+                                            <div class="block-of-content">fs-col-self-center</div>
+                                        </div>
+                                        <div class="fs-col-self-end">
+                                            <div class="block-of-content">fs-col-self-end</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-3"&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 1 --&gt;</span>
+            &lt;div class="fs-col-self-start"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-start&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 2 --&gt;</span>
+            &lt;div class="fs-col-self-center"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-center&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 3 --&gt;</span>
+            &lt;div class="fs-col-self-end"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-end&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+
+                            <!-- Justify Self - Start -->
+                            <div class="m-top">
+                                <div class=""> fs-col-self-start</div>
+                                <div class="container-of-content">
+                                    <div class="fs-forced-container fs-col-count-3" style="min-height: 150px;">
+                                        <div class="fs-col-self-start">
+                                            <div class="block-of-content">fs-col-self-start</div>
+                                        </div>
+                                        <div class="fs-col-self-stretch">
+                                            <div class="block-of-content">fs-col-self-stretch</div>
+                                        </div>
+                                        <div class="fs-col-self-start">
+                                            <div class="block-of-content">fs-col-self-start</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-3"&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 1 --&gt;</span>
+            &lt;div class="fs-col-self-start"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-start&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 2 --&gt;</span>
+            &lt;div class="fs-col-self-stretch"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-stretch&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 3 --&gt;</span>
+            &lt;div class="fs-col-self-start"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-start&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+
+                            <!-- Justify Self - End -->
+                            <div class="m-top">
+                                <div class=""> fs-col-self-end</div>
+                                <div class="container-of-content">
+                                    <div class="fs-forced-container fs-col-count-3" style="min-height: 150px;">
+                                        <div class="fs-col-self-end">
+                                            <div class="block-of-content">fs-col-self-end</div>
+                                        </div>
+                                        <div class="fs-col-self-stretch">
+                                            <div class="block-of-content">fs-col-self-stretch</div>
+                                        </div>
+                                        <div class="fs-col-self-end">
+                                            <div class="block-of-content">fs-col-self-end</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-3"&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 1 --&gt;</span>
+            &lt;div class="fs-col-self-end"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-end&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 2 --&gt;</span>
+            &lt;div class="fs-col-self-stretch"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-stretch&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 3 --&gt;</span>
+            &lt;div class="fs-col-self-end"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-end&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+
+                            <!-- Justify Self - Normal -->
+                            <div class="m-top">
+                                <div class=""> fs-col-self-normal</div>
+                                <div class="container-of-content">
+                                    <div class="fs-forced-container fs-col-count-3" style="min-height: 150px;">
+                                        <div class="fs-col-self-normal">
+                                            <div class="block-of-content">fs-col-self-normal</div>
+                                        </div>
+                                        <div class="fs-col-self-stretch">
+                                            <div class="block-of-content">fs-col-self-stretch</div>
+                                        </div>
+                                        <div class="fs-col-self-normal">
+                                            <div class="block-of-content">fs-col-self-normal</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+        <!-- CODE EXAMPLE  -->
+        <pre><code>
+        &lt;div class="fs-forced-container fs-col-count-3"&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 1 --&gt;</span>
+            &lt;div class="fs-col-self-normal"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-normal&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 2 --&gt;</span>
+            &lt;div class="fs-col-self-stretch"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-stretch&lt;/div&gt;
+            &lt;/div&gt;
+
+            <span class="txt-comment">&lt;!-- Grid item 3 --&gt;</span>
+            &lt;div class="fs-col-self-normal"&gt;
+                &lt;div class="block-of-content"&gt;fs-col-self-normal&lt;/div&gt;
+            &lt;/div&gt;
+
+        &lt;/div&gt;
+        </code></pre>
+                            </div>
+
+                            <div class="info-box m-top">
+                                <p><span class="txt-bold">Available Classes:</span></p>
+                                <ul>
+                                    <li><code>fs-col-self-stretch</code> - Stretch to fill the grid cell (default)</li>
+                                    <li><code>fs-col-self-center</code> - Center within the grid cell</li>
+                                    <li><code>fs-col-self-start</code> - Align to the start of the grid cell</li>
+                                    <li><code>fs-col-self-end</code> - Align to the end of the grid cell</li>
+                                    <li><code>fs-col-self-normal</code> - Use the grid container's <code>justify-items</code> value</li>
+                                </ul>
+                                <p><span class="txt-bold">Responsive Breakpoints:</span> All justify-self classes are available with breakpoint prefixes:</p>
+                                <ul>
+                                    <li>fs-col-self-{<span class="txt-bold txt--blue">breakpoint</span>}-stretch</li>
+                                    <li>fs-col-self-{<span class="txt-bold txt--blue">breakpoint</span>}-center</li>
+                                    <li>fs-col-self-{<span class="txt-bold txt--blue">breakpoint</span>}-start</li>
+                                    <li>fs-col-self-{<span class="txt-bold txt--blue">breakpoint</span>}-end</li>
+                                    <li>fs-col-self-{<span class="txt-bold txt--blue">breakpoint</span>}-normal</li>
+                                </ul>
+                                <p>Example: <code>fs-col-self-m-center</code>, <code>fs-col-self-l-start</code>, etc.</p>
+                                <p><span class="txt-bold">Important:</span> These classes only work in CSS Grid contexts (when using <code>fs-forced-container</code>). They have no effect in flexbox containers.</p>
+                            </div>
+
+                        </div>
+
                         <!-- Align Content -->
                         <div>
                             <p class="info-box"><span class="txt-bold">Multi-line Alignment:</span> Use align-content classes to align flex lines within a flex container when there is extra space in the cross-axis. This is useful when you have multiple rows of flex items.</p>
-                            
+
                             <!-- Align Content - Top -->
                             <div>
                                 <div class=""> fs-content-top</div>
@@ -2393,8 +2620,8 @@
                                         <div class="fs-m-6"><div class="block-of-content">fs-m-6<br> Row 2</div></div>
                                     </div>
                                 </div>
-                
-        <!-- CODE EXAMPLE  -->                   
+
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-content-top"&gt;
 
@@ -2417,7 +2644,7 @@
         &lt;/div&gt;
         </code></pre>
                             </div>
-                            
+
                             <!-- Align Content - Middle -->
                             <div class="m-top">
                                 <div class=""> fs-content-middle</div>
@@ -2429,8 +2656,8 @@
                                         <div class="fs-m-6"><div class="block-of-content">fs-m-6<br> Row 2</div></div>
                                     </div>
                                 </div>
-                
-        <!-- CODE EXAMPLE  -->                   
+
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-content-middle"&gt;
 
@@ -2453,7 +2680,7 @@
         &lt;/div&gt;
         </code></pre>
                             </div>
-                            
+
                             <!-- Align Content - Stretch -->
                             <div class="m-top">
                                 <div class=""> fs-content-stretch</div>
@@ -2465,8 +2692,8 @@
                                         <div class="fs-m-6"><div class="block-of-content">fs-m-6<br> Row 2</div></div>
                                     </div>
                                 </div>
-                
-        <!-- CODE EXAMPLE  -->                   
+
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-content-stretch"&gt;
 
@@ -2489,7 +2716,7 @@
         &lt;/div&gt;
         </code></pre>
                             </div>
-                            
+
                             <!-- Align Content - Bottom -->
                             <div class="m-top">
                                 <div class=""> fs-content-bottom</div>
@@ -2501,8 +2728,8 @@
                                         <div class="fs-m-6"><div class="block-of-content">fs-m-6<br> Row 2</div></div>
                                     </div>
                                 </div>
-                
-        <!-- CODE EXAMPLE  -->                   
+
+        <!-- CODE EXAMPLE  -->
         <pre><code>
         &lt;div class="fs-container fs-content-bottom"&gt;
 
@@ -2525,7 +2752,7 @@
         &lt;/div&gt;
         </code></pre>
                             </div>
-                            
+
                             <div class="info-box m-top">
                                 <p><span class="txt-bold">Responsive Breakpoints:</span> All align-content classes are available with breakpoint prefixes:</p>
                                 <ul>
@@ -2536,9 +2763,9 @@
                                 </ul>
                                 <p>Example: <code>fs-content-m-top</code>, <code>fs-content-l-middle</code>, etc.</p>
                             </div>
-                            
+
                         </div>
-                        
+
                     </section>
 
 
@@ -2723,11 +2950,11 @@
                         </tbody></table>
 
 
-                       
+
 
 
                     </section>
-                    
+
                     <!-- Name Origins -->
                     <section class="page-section">
                         <h2>Where did the name come from?</h2>
