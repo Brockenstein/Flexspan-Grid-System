@@ -21,19 +21,19 @@
 }
 
 .fs-nogap {
-    --fs-spacing-col: 0px; 
+    --fs-spacing-col: 0px;
     --fs-spacing-row: 0px;
-} 
+}
 
 // Auto Size
 .fs-auto {
     @include flex-item(auto,12,null,null,true,null,1,1)
-} 
+}
 
 // Iterations through all the sizes for Flexbox styles
 
 // Standard Columns
-@for $i from 1 through 12 { 
+@for $i from 1 through 12 {
     @if $i == 12 {
         .fs-#{$i} {
             @include flex-item($i,12,null,null,true,null,0,0,100%)
@@ -47,7 +47,7 @@
 }
 
 // Fluid Columns
-@for $i from 1 through 12 { 
+@for $i from 1 through 12 {
     .fs-fluid .fs-#{$i} {
         @include flex-item($i,12,null,null,true,null,1,0)
     }
@@ -159,7 +159,7 @@
 .fs-dir-row {
     flex-direction: row;
 }
-  
+
 .fs-dir-col {
     flex-direction: column;
 }
@@ -180,6 +180,23 @@
 }
 .fs-col-justify-normal {
     justify-items: normal;
+}
+
+// Justify-Self Classes for CSS Grid (only useful inside .fs-forced-container)
+.fs-col-self-stretch {
+    justify-self: stretch;
+}
+.fs-col-self-center {
+    justify-self: center;
+}
+.fs-col-self-start {
+    justify-self: start;
+}
+.fs-col-self-end {
+    justify-self: end;
+}
+.fs-col-self-normal {
+    justify-self: normal;
 }
 
 // Off Set styles
@@ -232,7 +249,7 @@
     @include breakpoint($breakpointSize) {
 
        // Standard Columns
-        @for $i from 1 through 12 { 
+        @for $i from 1 through 12 {
             @if $i == 12 {
                 .fs-#{$name}-#{$i} {
                     @include flex-item($i,12,null,null,true,null,0,0,100%)
@@ -246,7 +263,7 @@
         }
 
         // Fluid Columns
-        @for $i from 1 through 12 { 
+        @for $i from 1 through 12 {
             .fs-#{$name}-fluid .fs-#{$i} {
                 @include flex-item($i, 12, null, null, true, null, 1, 1);
             }
@@ -256,15 +273,15 @@
         .fs-#{$name}-container {
             @include flex-parent(flex, row, wrap, space-between, stretch, start);
         }
-    
+
         .fs-#{$name}-row {
             @include flex-parent(flex, row, nowrap, space-between, stretch, start);
         }
-    
+
         .fs-#{$name}-row-gap {
             margin-bottom: var(--fs-spacing-row);
         }
-    
+
         // Auto
         .fs-#{$name}-auto {
             @include flex-item(auto, 12, null, null, true, null, 1, 1);
@@ -289,7 +306,7 @@
         .fs-#{$name}-first-in-row {
             grid-row-start: 1;
         }
-        
+
         .fs-#{$name}-first-in-col {
             grid-column-start: 1;
         }
@@ -325,7 +342,7 @@
         .fs-#{$name}-self-stretch {
             align-self: stretch;
         }
-        
+
         .fs-#{$name}-self-bottom {
             align-self: flex-end;
         }
@@ -380,7 +397,7 @@
         .fs-dir-#{$name}-row {
             flex-direction: row;
           }
-      
+
           .fs-dir-#{$name}-col {
             flex-direction: column;
           }
@@ -401,6 +418,23 @@
           .fs-col-justify-#{$name}-normal {
             justify-items: normal;
           }
+
+        // Justify-Self Classes for CSS Grid (only useful inside .fs-forced-container)
+        .fs-col-self-#{$name}-stretch {
+            justify-self: stretch;
+        }
+        .fs-col-self-#{$name}-center {
+            justify-self: center;
+        }
+        .fs-col-self-#{$name}-start {
+            justify-self: start;
+        }
+        .fs-col-self-#{$name}-end {
+            justify-self: end;
+        }
+        .fs-col-self-#{$name}-normal {
+            justify-self: normal;
+        }
 
         // Width Classes
         @for $i from 1 through 12 {
@@ -448,7 +482,7 @@
             }
         }
 
-        
+
 
 
     }
