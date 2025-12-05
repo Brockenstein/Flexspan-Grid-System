@@ -1038,7 +1038,9 @@
 
                     <p>You can still have one element span multiple columns if you need.</p>
                     <div class="info-box">
-                        fs-col-span-{<span class="txt-bold txt--blue">Number of Columns span</span>} <br> fs-col-span-{<span class="txt-bold txt--blue">breakpoint</span>}-{<span class="txt-bold txt--blue">Number of Columns to span</span>}
+                        <span class="txt-bold">CSS Grid Only:</span> fs-col-span-{<span class="txt-bold txt--blue">Number of Columns span</span>} <br> fs-col-span-{<span class="txt-bold txt--blue">breakpoint</span>}-{<span class="txt-bold txt--blue">Number of Columns to span</span>}
+                        <br><br>
+                        <span class="txt-bold">Note:</span> These classes only work in CSS Grid contexts (when using <code>fs-forced-container</code>).
                        </div>
 
                     <div>
@@ -1114,8 +1116,10 @@
 
                     <p class="m-top">You can also specify both the starting column and the span to create gaps between grid items. This is useful when you want to skip columns or create specific spacing.</p>
                     <div class="info-box">
-                        fs-col-start-{<span class="txt-bold txt--blue">Start Column</span>}-span-{<span class="txt-bold txt--blue">Number of Columns to span</span>} <br>
+                        <span class="txt-bold">CSS Grid Only:</span> fs-col-start-{<span class="txt-bold txt--blue">Start Column</span>}-span-{<span class="txt-bold txt--blue">Number of Columns to span</span>} <br>
                         fs-col-start-{<span class="txt-bold txt--blue">breakpoint</span>}-{<span class="txt-bold txt--blue">Start Column</span>}-span-{<span class="txt-bold txt--blue">Number of Columns to span</span>}
+                        <br><br>
+                        <span class="txt-bold">Note:</span> These classes only work in CSS Grid contexts (when using <code>fs-forced-container</code>).
                     </div>
 
                     <div>
@@ -1860,7 +1864,7 @@
 
                         <!-- Justify Content -->
 
-                        <p class="info-box"><span class="txt-bold">Vertical:</span> Use flex classes to align flex columns within flex container along horizontal axis</p>
+                        <p class="info-box"><span class="txt-bold">Main-Axis Alignment:</span> Use <code>justify-content</code> classes to align items along the main-axis (horizontal in row layouts) within a flex container. <span class="txt-bold">Note:</span> These classes work with <code>fs-container</code> (flexbox).</p>
 
                             <!-- Justify Content - Start -->
                             <div>
@@ -2105,7 +2109,7 @@
 
                         <!-- Align Items -->
                         <div>
-                            <p class="info-box"><span class="txt-bold">Horizontal:</span> Use flex classes to align flex columns within flex container along horizontal axis</p>
+                            <p class="info-box"><span class="txt-bold">Cross-Axis Alignment:</span> Use <code>align-items</code> classes to align items along the cross-axis (vertical in row layouts) within a flex container. <span class="txt-bold">Note:</span> These classes work with <code>fs-container</code> (flexbox). <code>align-items</code> also works in CSS Grid, but these utility classes are designed for flexbox contexts.</p>
 
                             <!-- Align Item - Top -->
                             <div>
@@ -2219,7 +2223,7 @@
 
                         <!-- Align Self -->
                         <div>
-                            <p class="info-box"> <span class="txt-bold">Horizontal:</span> To align flex columns independent of one another you, can also add a class to the specific flex element.</p>
+                            <p class="info-box"><span class="txt-bold">Individual Item Alignment:</span> To align individual items independently along the cross-axis, add a class to the specific element. <span class="txt-bold">Note:</span> <code>align-self</code> works in both flexbox (<code>fs-container</code>) and CSS Grid (<code>fs-forced-container</code>).</p>
                             <!-- Align Self - Top -->
                             <div>
                                 <div class=""> fs-self-top</div>
@@ -2607,7 +2611,7 @@
 
                         <!-- Align Content -->
                         <div>
-                            <p class="info-box"><span class="txt-bold">Multi-line Alignment:</span> Use align-content classes to align flex lines within a flex container when there is extra space in the cross-axis. This is useful when you have multiple rows of flex items.</p>
+                            <p class="info-box"><span class="txt-bold">Multi-line Alignment:</span> Use <code>align-content</code> classes to align flex lines within a flex container when there is extra space in the cross-axis. This is useful when you have multiple rows of flex items. <span class="txt-bold">Note:</span> <code>align-content</code> works in both flexbox and CSS Grid, but these utility classes are primarily designed for flexbox contexts.</p>
 
                             <!-- Align Content - Top -->
                             <div>
