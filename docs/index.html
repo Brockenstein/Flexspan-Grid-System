@@ -581,7 +581,7 @@
                     <!-- Flex Fluid -->
                     <section id="fluid" class="page-section">
                         <h2>Fluid</h2>
-                        <p>With the grid system, other than having percentage based columns you also have the flexibility to utilize fluid columns which resize based off the existing space in the flex container.</p>
+                        <p>With the grid system, other than having percentage based columns you also have the flexibility to utilize fluid columns which resize based off the existing space in the flex container. <span class="txt-bold">Note:</span> Fluid columns work with <code>fs-container</code> (flexbox) and are not applicable to CSS Grid contexts (<code>fs-forced-container</code>).</p>
 
                         <p class="info-box"> To enable fluid columns you can do so by adding <span class="txt--blue txt-bold">"fs-fluid"</span> to the parent container.</p>
 
@@ -854,7 +854,7 @@
                         <!-- Fluid -->
                         <div>
                             <p>
-                                In some cases you may want to really leverage flexbox to literally flex in size to fill up row, columns to be differnt widths, or even have content centered along the vertical axis. This is when you use the "fs-container" class and and add differnt classes to the flex/child elements to display it to your liking. This method uses Flexbox css.
+                                In some cases you may want to really leverage flexbox to literally flex in size to fill up row, columns to be different widths, or even have content centered along the vertical axis. This is when you use the <code>fs-container</code> class and add different classes to the flex/child elements to display it to your liking. <span class="txt-bold">Note:</span> This method uses <strong>Flexbox CSS</strong> and is the default container type for the Flexspan Grid System.
                             </p>
                             <span>fs-container</span>
                             <div class="container-of-content">
@@ -915,7 +915,7 @@
                         <!-- Forced -->
                     <div>
                             <p>
-                                In other cases, you may want to predetermine how many columns there are, and if you are okay with the columns always being equal widths. We call this Forced and you use the "fs-forced-container" class and then instead of adding a class to each direct child, on that container you indicate the amount of columns you want to force. This method uses Grid css.
+                                In other cases, you may want to predetermine how many columns there are, and if you are okay with the columns always being equal widths. We call this Forced and you use the <code>fs-forced-container</code> class and then instead of adding a class to each direct child, on that container you indicate the amount of columns you want to force. <span class="txt-bold">Note:</span> This method uses <strong>CSS Grid</strong> and requires the <code>fs-forced-container</code> class along with <code>fs-col-count-*</code> classes.
                             </p>
 
                             <div>
