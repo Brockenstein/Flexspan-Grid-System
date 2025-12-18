@@ -229,6 +229,23 @@
     }
 }
 
+// CSS Grid column start and fill classes (fill to end)
+@for $start from 1 through 12 {  //12 Column Grid
+    .fs-col-start-#{$start}-span-fill {
+        grid-column: #{$start} / -1;
+    }
+}
+
+// CSS Grid column start and fill-short classes (fill short of end)
+@for $start from 1 through 12 {  //12 Column Grid
+    @for $count from 1 through 11 {  // Leave 1-11 columns at the end
+        .fs-col-start-#{$start}-span-fill-short-#{$count} {
+            $negative: $count + 1;
+            grid-column: #{$start} / -#{$negative};
+        }
+    }
+}
+
 // Width classes
 @for $i from 1 through 12 {  //12 Column Grid
     .fs-exact-#{$i} {
@@ -478,6 +495,23 @@
             @for $span from 1 through (13 - $start) {  // Ensure start + span - 1 <= 12
                 .fs-col-start-#{$name}-#{$start}-span-#{$span} {
                     grid-column: #{$start} / span #{$span};
+                }
+            }
+        }
+
+        // CSS Grid column start and fill classes (fill to end)
+        @for $start from 1 through 12 {  //12 Column Grid
+            .fs-col-start-#{$name}-#{$start}-span-fill {
+                grid-column: #{$start} / -1;
+            }
+        }
+
+        // CSS Grid column start and fill-short classes (fill short of end)
+        @for $start from 1 through 12 {  //12 Column Grid
+            @for $count from 1 through 11 {  // Leave 1-11 columns at the end
+                .fs-col-start-#{$name}-#{$start}-span-fill-short-#{$count} {
+                    $negative: $count + 1;
+                    grid-column: #{$start} / -#{$negative};
                 }
             }
         }

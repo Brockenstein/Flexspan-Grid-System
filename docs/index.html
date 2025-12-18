@@ -1210,11 +1210,195 @@
 </code></pre>
                     </div>
 
+                    <p class="m-top">You can also use fill classes to span from a starting column to the end of the grid, or stop short of the end. This is useful when you want an item to fill the remaining space without calculating the exact span value.</p>
+                    <div class="info-box">
+                        <span class="txt-bold">CSS Grid Only:</span> fs-col-start-{<span class="txt-bold txt--blue">Start Column</span>}-span-fill <br>
+                        fs-col-start-{<span class="txt-bold txt--blue">Start Column</span>}-span-fill-short-{<span class="txt-bold txt--blue">Number of Columns to leave at end</span>} <br>
+                        fs-col-start-{<span class="txt-bold txt--blue">breakpoint</span>}-{<span class="txt-bold txt--blue">Start Column</span>}-span-fill <br>
+                        fs-col-start-{<span class="txt-bold txt--blue">breakpoint</span>}-{<span class="txt-bold txt--blue">Start Column</span>}-span-fill-short-{<span class="txt-bold txt--blue">Number of Columns to leave at end</span>}
+                        <br><br>
+                        <span class="txt-bold">Note:</span> These classes only work in CSS Grid contexts (when using <code>fs-forced-container</code>). The <code>fill</code> variant fills to the end of the grid (<code>grid-column: start / -1</code>), while <code>fill-short-{count}</code> leaves the specified number of columns at the end (<code>grid-column: start / -{count+1}</code>).
+                    </div>
+
+                    <div>
+                        <span>fs-forced-container fs-col-count-12</span>
+                        <div class="container-of-content">
+                            <div class="fs-forced-container fs-col-count-12">
+                                <div class="fs-col-start-1-span-3">
+                                    <div class="block-of-content">
+                                        fs-col-start-1-span-3<br>
+                                        Columns 1-3
+                                    </div>
+                                </div>
+                                <div class="fs-col-start-4-span-fill">
+                                    <div class="block-of-content">
+                                        fs-col-start-4-span-fill<br>
+                                        Columns 4-12 (fills to end)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!-- CODE EXAMPLE  -->
+<pre><code>
+&lt;div class="fs-forced-container fs-col-count-12"&gt;
+
+    <span class="txt-comment">&lt;!-- First block: columns 1-3 --&gt;</span>
+    &lt;div class="fs-col-start-1-span-3"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-1-span-3&lt;br&gt;
+            Columns 1-3
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    <span class="txt-comment">&lt;!-- Second block: fills from column 4 to end --&gt;</span>
+    &lt;div class="fs-col-start-4-span-fill"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-4-span-fill&lt;br&gt;
+            Columns 4-12 (fills to end)
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+
+                    <div class="m-top">
+                        <span>fs-forced-container fs-col-count-12 (fill-short example)</span>
+                        <div class="container-of-content">
+                            <div class="fs-forced-container fs-col-count-12">
+                                <div class="fs-col-start-1-span-3">
+                                    <div class="block-of-content">
+                                        fs-col-start-1-span-3<br>
+                                        Columns 1-3
+                                    </div>
+                                </div>
+                                <div class="fs-col-start-4-span-fill-short-1">
+                                    <div class="block-of-content">
+                                        fs-col-start-4-span-fill-short-1<br>
+                                        Columns 4-11 (leaves 1 column at end)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!-- CODE EXAMPLE  -->
+<pre><code>
+&lt;div class="fs-forced-container fs-col-count-12"&gt;
+
+    <span class="txt-comment">&lt;!-- First block: columns 1-3 --&gt;</span>
+    &lt;div class="fs-col-start-1-span-3"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-1-span-3&lt;br&gt;
+            Columns 1-3
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    <span class="txt-comment">&lt;!-- Second block: fills from column 4, leaving 1 column at end --&gt;</span>
+    &lt;div class="fs-col-start-4-span-fill-short-1"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-4-span-fill-short-1&lt;br&gt;
+            Columns 4-11 (leaves 1 column at end)
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                    </div>
+
+                    <div class="m-top">
+                        <span>fs-forced-container fs-col-count-12 (fill-short-2 example)</span>
+                        <div class="container-of-content">
+                            <div class="fs-forced-container fs-col-count-12">
+                                <div class="fs-col-start-1-span-3">
+                                    <div class="block-of-content">
+                                        fs-col-start-1-span-3<br>
+                                        Columns 1-3
+                                    </div>
+                                </div>
+                                <div class="fs-col-start-4-span-fill-short-2">
+                                    <div class="block-of-content">
+                                        fs-col-start-4-span-fill-short-2<br>
+                                        Columns 4-10 (leaves 2 columns at end)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!-- CODE EXAMPLE  -->
+<pre><code>
+&lt;div class="fs-forced-container fs-col-count-12"&gt;
+
+    <span class="txt-comment">&lt;!-- First block: columns 1-3 --&gt;</span>
+    &lt;div class="fs-col-start-1-span-3"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-1-span-3&lt;br&gt;
+            Columns 1-3
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    <span class="txt-comment">&lt;!-- Second block: fills from column 4, leaving 2 columns at end --&gt;</span>
+    &lt;div class="fs-col-start-4-span-fill-short-2"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-4-span-fill-short-2&lt;br&gt;
+            Columns 4-10 (leaves 2 columns at end)
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        <p class="m-top"><strong>Grid visualization (12-column grid):</strong></p>
+                        <p><img src="img/grid-12-col-fill-short-2.png" alt="Visual diagram showing a 12-column grid with fs-col-start-1-span-3 and fs-col-start-4-span-fill-short-2 classes, demonstrating how fill-short-2 spans columns 4-10 leaving columns 11-12 empty" style="max-width: 100%; height: auto;"></p>
+                    </div>
+
+                    <div class="m-top">
+                        <span>fs-forced-container fs-col-count-8</span>
+                        <div class="container-of-content">
+                            <div class="fs-forced-container fs-col-count-8">
+                                <div class="fs-col-start-1-span-3">
+                                    <div class="block-of-content">
+                                        fs-col-start-1-span-3<br>
+                                        Columns 1-3
+                                    </div>
+                                </div>
+                                <div class="fs-col-start-4-span-fill-short-2">
+                                    <div class="block-of-content">
+                                        fs-col-start-4-span-fill-short-2<br>
+                                        Columns 4-6 (leaves 2 columns at end)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+<!-- CODE EXAMPLE  -->
+<pre><code>
+&lt;div class="fs-forced-container fs-col-count-8"&gt;
+
+    <span class="txt-comment">&lt;!-- First block: columns 1-3 --&gt;</span>
+    &lt;div class="fs-col-start-1-span-3"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-1-span-3&lt;br&gt;
+            Columns 1-3
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    <span class="txt-comment">&lt;!-- Second block: fills from column 4, leaving 2 columns at end --&gt;</span>
+    &lt;div class="fs-col-start-4-span-fill-short-2"&gt;
+        &lt;div class="block-of-content"&gt;
+            fs-col-start-4-span-fill-short-2&lt;br&gt;
+            Columns 4-6 (leaves 2 columns at end)
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+                        <p class="m-top"><strong>Grid visualization (8-column grid):</strong></p>
+                        <p><img src="img/grid-8-col-fill-short-2.png" alt="Visual diagram showing an 8-column grid with fs-col-start-1-span-3 and fs-col-start-4-span-fill-short-2 classes, demonstrating how fill-short-2 spans columns 4-6 leaving columns 7-8 empty" style="max-width: 100%; height: auto;"></p>
+                    </div>
+
                     <div class="info-box m-top">
                         <p><span class="txt-bold">When to use:</span></p>
                         <ul>
                             <li>Use <code>fs-col-span-{i}</code> when you want an item to span multiple columns starting from its natural position</li>
                             <li>Use <code>fs-col-start-{start}-span-{span}</code> when you need to specify both the starting column and span, especially to create gaps between grid items</li>
+                            <li>Use <code>fs-col-start-{start}-span-fill</code> when you want an item to fill from a starting column to the end of the grid without calculating the exact span</li>
+                            <li>Use <code>fs-col-start-{start}-span-fill-short-{count}</code> when you want to fill from a starting column but leave a specific number of columns empty at the end</li>
                         </ul>
                     </div>
 
