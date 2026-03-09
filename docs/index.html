@@ -3217,11 +3217,15 @@
                     <section id="mixins" class="page-section">
                         <h2>Mixins Reference</h2>
 
-                        <p>The following includes are detailed explanations of the mixins used to create the Flexspan Grid System. Feel free to create your own classes uses these or go as far as creating your own grid system!</p>
+                        <p>The following SCSS includes are detailed explanations of the mixins used to create the Flexspan Grid System. Feel free to create your own classes using these or go as far as creating your own grid system!</p>
 
                         <p><span class="txt-bold txt--blue">@include flex-parent()</span> Arguments consist of
                         (<span class="txt-bold txt--blue">$display:</span>&nbsp;flex, <span class="txt-bold txt--blue">$flex&#8209;direction:</span>&nbsp;null, <span class="txt-bold txt--blue">$flex&#8209;wrap:</span>&nbsp;null, <span class="txt-bold txt--blue">$justify&#8209;content:</span>&nbsp;null, <span class="txt-bold txt--blue">$align&#8209;items:</span>&nbsp;null, <span class="txt-bold txt--blue">$align&#8209;content:</span>&nbsp;null)
                         </p>
+
+                        <div class="info-box">
+                            <p><span class="txt-bold">Note:</span> <code>flex-parent</code> always applies <code>gap: var(--fs-spacing-row) var(--fs-spacing-col)</code> and <code>box-sizing: border-box</code>.</p>
+                        </div>
 
                         <table class="info-table">
                             <tbody><tr>
@@ -3272,7 +3276,7 @@
 
                         <p><span class="txt-bold txt--blue">@include flex-item()</span> Arguments consist of
 
-                        (<span class="txt-bold txt--blue">$col:</span>&nbsp;initial, <span class="txt-bold txt--blue">$grid&#8209;columns:</span>&nbsp;12, <span class="txt-bold txt--blue">$col&#8209;offset:</span>&nbsp;null, <span class="txt-bold txt--blue">$offset&#8209;direction:</span> left, <span class="txt-bold txt--blue">$use&#8209;flex:</span> true, <span class="txt-bold txt--blue">$align&#8209;self:</span>&nbsp;null, <span class="txt-bold txt--blue">$flex&#8209;grow:</span>&nbsp;0, <span class="txt-bold txt--blue">$flex&#8209;shrink:</span>&nbsp;1,<span class="txt-bold txt--blue">$flex&#8209;basis:</span>&nbsp;auto, <span class="txt-bold txt--blue">$order:</span>&nbsp;null, <span class="txt-bold txt--blue">$shorthand:</span>&nbsp;true <span class="txt-bold txt--blue">$width:</span>&nbsp;null, <span class="txt-bold txt--blue">$max-width:</span>&nbsp;null, <span class="txt-bold txt--blue">$min&#8209;width:</span>&nbsp;null, <span class="txt-bold txt--blue">$height:</span>&nbsp;null, <span class="txt-bold txt--blue">$max&#8209;height</span>: null, <span class="txt-bold txt--blue">$min&#8209;height:</span>&nbsp;null)</p>
+                        (<span class="txt-bold txt--blue">$col:</span>&nbsp;initial, <span class="txt-bold txt--blue">$grid&#8209;columns:</span>&nbsp;12, <span class="txt-bold txt--blue">$col&#8209;offset:</span>&nbsp;null, <span class="txt-bold txt--blue">$offset&#8209;direction:</span> left, <span class="txt-bold txt--blue">$use&#8209;flex:</span> true, <span class="txt-bold txt--blue">$align&#8209;self:</span>&nbsp;null, <span class="txt-bold txt--blue">$flex&#8209;grow:</span>&nbsp;0, <span class="txt-bold txt--blue">$flex&#8209;shrink:</span>&nbsp;1, <span class="txt-bold txt--blue">$flex&#8209;basis:</span>&nbsp;null, <span class="txt-bold txt--blue">$order:</span>&nbsp;null, <span class="txt-bold txt--blue">$shorthand:</span>&nbsp;true, <span class="txt-bold txt--blue">$width:</span>&nbsp;null, <span class="txt-bold txt--blue">$max-width:</span>&nbsp;null, <span class="txt-bold txt--blue">$min&#8209;width:</span>&nbsp;null, <span class="txt-bold txt--blue">$height:</span>&nbsp;null, <span class="txt-bold txt--blue">$max&#8209;height:</span>&nbsp;null, <span class="txt-bold txt--blue">$min&#8209;height:</span>&nbsp;null)</p>
 
                         <table class="info-table">
                             <tbody><tr>
@@ -3285,12 +3289,12 @@
                                 <td>$col</td>
                                 <td>initial</td>
                                 <td> initial | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt; | auto | equal | none | positive </td>
-                                <td><code>&lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt;</code> Defines the number of columns this cell spans and results in flex-grow defined by $flex-grow flex-shrink set to zero and flex basis set to a percentage based on your columns and gap<br>
+                                <td><code>&lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#numbers" target="_blank">number</a>&gt;</code> Unitless: defines the number of columns this cell spans (flex-shrink: 0, flex-basis calculated from columns and gap). With unit (e.g. 50px): used directly as flex-basis.<br>
 
                                 <code>initial</code> results in flex: 0 1 auto;<br>
                                 <code>auto</code> results in flex: 1 1 auto;<br>
-                                <code>equal</code> results in flex: 0 1 auto;<br>
-                                <code>none</code> results in flex: 1 1 0;<br>
+                                <code>equal</code> results in flex: 1 1 0;<br>
+                                <code>none</code> results in flex: 0 0 auto;<br>
                                 <code>positive</code> results in flex-grow defined by $flex-grow unless it is zero it will be forced to be flex-grow: 1; and flex-shrink and flex-basis are both set to 0 </td>
                             </tr>
                             <tr>
@@ -3302,8 +3306,8 @@
                             <tr>
                                 <td>$col-offset</td>
                                 <td>null</td>
-                                <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt;</td>
-                                <td><code>&lt;percentage&gt;</code> offset a width of columns.</td>
+                                <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#percentage-units" target="_blank">percentage</a>&gt; | &lt;unitless number&gt;</td>
+                                <td><code>&lt;percentage&gt;</code> offset by percentage. <code>&lt;unitless number&gt;</code> offset by that many columns (calculated with gap).</td>
                             </tr>
                             <tr>
                                 <td>$offset-direction</td>
@@ -3337,9 +3341,9 @@
                             </tr>
                             <tr>
                                 <td>$flex-basis</td>
-                                <td>auto</td>
-                                <td>&lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt; | auto</td>
-                                <td>specifies the initial main size of a item</td>
+                                <td>null</td>
+                                <td>null | &lt;<a href="http://www.w3.org/TR/CSS21/syndata.html#length-units" target="_blank">length</a>&gt; | auto</td>
+                                <td>specifies the initial main size of an item</td>
                             </tr>
                             <tr>
                                 <td>$order</td>
