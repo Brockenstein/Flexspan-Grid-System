@@ -1,5 +1,5 @@
 // "Flexspan Grid System" Mixins
-// Version 1.2.0
+// Version 1.3.0
 //
 // These flexbox mixins are needed as part of the Flexspan Grid System but can be used outside of the grid system to generate classes new  yourself.
 // Documentation on how to use these mixins https://brockenstein.github.io/Flexspan-Grid-System/#mixins
@@ -39,7 +39,7 @@
 
 @mixin flex-item($col: initial, $grid-columns: 12, $col-offset: null, $offset-direction: left, $use-flex: true, $align-self: null, $flex-grow: 0, $flex-shrink: 1, $flex-basis: null, $order: null, $shorthand: true, $width: null, $max-width: null, $min-width: null, $height: null, $max-height: null, $min-height: null)
 {
-	box-sizing: border-box;	
+	box-sizing: border-box;
 
 	@if type-of($col) == number and unitless($col) == true {
 		$flex-shrink: 0;
