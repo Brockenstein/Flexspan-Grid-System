@@ -266,6 +266,20 @@ img {
     width: 100%;
     box-sizing: border-box;
     margin: 20px 0;
+
+    &-warning {
+        background-color: rgba( $secondary-alt , .25);
+        border-left-color: $secondary-alt;
+    }
+}
+
+.tip-box {
+    background-color: rgba( $primary-alt , .25);
+    padding: 20px 40px;
+    border-left: 5px solid $primary-alt;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 20px 0;
 }
 
 .txt-bold {
