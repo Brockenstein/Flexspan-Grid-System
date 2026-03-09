@@ -14,7 +14,7 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 2. Add the following code to your main scss in your project. (Note: you may need to adjust the file path if you put the scss partials in a different directory than your main scss.)
 
     ```
-    
+
         // Breakpoint mixin used with the Flexspan Grid System
         @mixin breakpoint($break) {
             @media screen and (min-width: $break) {
@@ -25,27 +25,27 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
         // Breakpoints you may use across the site within mixins
         $xxs: 360px;
         $xs: 480px;
-        $s: 550px; 
+        $s: 550px;
         $sm: 600px;
         $m: 768px;
         $ml: 960px;
         $l: 1024px;
         $xl: 1200px;
-        $xxl: 1400px; 
-        
+        $xxl: 1400px;
+
         // Breakpoints you plan on using with the Flexspan Grid System
         $breakpointsUsedForGrid:
         "s" $s,
         "m" $m,
         "l" $l;
-        
+
         // CSS Variable
         // NOTE: You can not add SCSS variables to CSS variables, however you can use CSS variables in SCSS mixins
         :root {
             --fs-spacing-col: 15px;
             --fs-spacing-row: 15px;
         }
-        
+
         // Importing the mixings for the Flexspan Grid System
         @import "_flexspan-grid-mixins", "_flexspan-grid-classes";
     ```
@@ -73,6 +73,7 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 # Team
 ## Main Contributors
 * [Brock Barnett](https://github.com/Brockenstein) - Ideator, Lead Developer and Lead Documentation Writer
+* [Paul Goepfert](https://github.com/pgoepfert) - Developer, Collaborator, Documentation editor and Tester
 * [Donte White](https://github.com/dwhite02) - Developer, Tester and Documentation Writer
 * [Malcom Harris](https://github.com/harrismalcolm) - Developer and Tester
 * [Drew Hill](https://github.com/drewhilltmp) - Collaborator and Tester
@@ -80,10 +81,10 @@ Note: This is not just a pre-compiled CSS library that you add to your project b
 
 ## Special thanks to
 * [Drew Toth](https://github.com/drew-git-tmp)
-* [Paul Goepfert](https://github.com/pgoepfert)
 * [Stephen Delancey](https://github.com/stephendelancey)
 * [Laura Mahoney](https://github.com/lmahoney1218)
 * [Josh Mahoney](https://github.com/jkmahoney)
+* [Rebecca Hammer](https://github.com/rehamm01)
 
 
 ## Inspiration
